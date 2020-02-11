@@ -1,0 +1,27 @@
+redactor_title = Redactor
+
+redactor_error_save_profile = Profiles could not be created.
+
+redactor_help = Help
+
+redactor_profile = Profile
+redactor_profile_add = add
+redactor_profile_copy = copy
+redactor_profile_edit = edit
+redactor_profile_description = Description
+redactor_profile_functions = Functions
+redactor_profile_max_height = Maximum height
+redactor_profile_min_height = Minimum height
+redactor_profile_name = Name
+redactor_profile_no_results = No profiles found
+redactor_profile_plugins = Plugins
+redactor_profile_selector = Selector
+redactor_profiles = Profile
+
+
+redactor_plugin_bold_title = B
+redactor_plugin_bold_tooltip = Bold
+redactor_plugin_deleted_title = S
+redactor_plugin_deleted_tooltip = Delete
+redactor_plugin_italic_title = I
+redactor_plugin_italic_tooltip = Italic

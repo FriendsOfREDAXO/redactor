@@ -1,0 +1,28 @@
+package: redactor
+version: '1.0.0-dev'
+author: Friends Of REDAXO
+supportpage: github.com/FriendsOfREDAXO/redactor
+
+vendor_versions:
+    redactor: '3.3.2'
+
+conflicts:
+    packages:
+        redactor2: '<5'
+
+requires:
+    redaxo: '^5.9'
+    php:
+        version: '>=7.3'
+
+page:
+    title: 'translate:title'
+    perm: admin[]
+    pjax: true
+    subpages:
+        profile:
+            title: 'translate:profiles'
+        help:
+            title: 'translate:help'
+            icon: rex-icon fa-info-circle
+            itemclass: pull-right
