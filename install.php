@@ -28,9 +28,9 @@ foreach (rex_i18n::getLocales() as $locale) {
 
     $dir = 'vendor/redactor/_langs/';
     if(file_exists($addon->getPath($dir.$locale.'.js'))) {
-        $files[$dir.$locale.'.js'] = 'langs/'.$localeShort.'.js';
+        $files[$dir.$locale.'.js'] = 'vendor/redactor/langs/'.$localeShort.'.js';
     } elseif(file_exists($addon->getPath($dir.$localeShort.'.js'))) {
-        $files[$dir.$localeShort.'.js'] = 'langs/'.$localeShort.'.js';
+        $files[$dir.$localeShort.'.js'] = 'vendor/redactor/langs/'.$localeShort.'.js';
     }
 }
 foreach ($files as $source => $destination) {

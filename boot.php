@@ -29,11 +29,11 @@ if (rex::isBackend() && rex::getUser()) {
 
     $userLang = rex::getUser()->getLanguage();
     if ('' === trim($userLang)) {
-        $userLang = rex::getProperty('lang_fallback')[0];
+        $userLang = rex::getProperty('lang');
     }
 
     rex_view::addJsFile($addon->getAssetsUrl('vendor/redactor/redactor.js'));
-    rex_view::addJsFile($addon->getAssetsUrl('langs/'.substr($userLang, 0, 2).'.js'));
+    rex_view::addJsFile($addon->getAssetsUrl('vendor/redactor/langs/'.substr($userLang, 0, 2).'.js'));
     rex_view::addJsFile($addon->getAssetsUrl('cache/plugins.'.$userLang.'.js'));
     rex_view::addJsFile($addon->getAssetsUrl('cache/profiles.js'));
     rex_view::addJsFile($addon->getAssetsUrl('redactor.js'));
