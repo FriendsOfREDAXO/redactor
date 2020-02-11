@@ -22,6 +22,7 @@
 - outdent
 - pre 
 - redo
+- separator (|)
 - sub
 - sup
 - ul
