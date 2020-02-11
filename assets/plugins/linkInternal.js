@@ -49,7 +49,7 @@
             if (this.selection.getText() !== '') {
                 data.label = this.selection.getText();
             }
-            this.insertion.insertHtml('<a href="' + data.url + '">' + data.label + '</a>');
+            this.insertion.insertRaw('<a href="' + data.url + '">' + data.label + '</a>');
         }
     });
 })(Redactor);
