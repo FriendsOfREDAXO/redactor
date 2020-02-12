@@ -24,19 +24,40 @@ if (rex::isBackend() && rex::getUser()) {
         Redactor::createPluginFile();
     }
 
-    rex_view::addCssFile($addon->getAssetsUrl('vendor/redactor/redactor.css'));
-    rex_view::addCssFile($addon->getAssetsUrl('redactor.css'));
 
-    $userLang = rex::getUser()->getLanguage();
-    if ('' === trim($userLang)) {
-        $userLang = rex::getProperty('lang');
-    }
+    rex_extension::register('REDACTOR_PAGES', function(\rex_extension_point $ep) {
+        $pages = $ep->getSubject();
+        if (rex_plugin::get('structure', 'content')->isAvailable()) {
+            $pages[] = 'content/edit';
+        }
+        if (rex_plugin::get('yform', 'manager')->isAvailable()) {
+            $pages[] = 'yform/manager/data_edit';
+        }
+        return $pages;
+    });
 
-    rex_view::addJsFile($addon->getAssetsUrl('vendor/redactor/redactor.js'));
-    rex_view::addJsFile($addon->getAssetsUrl('vendor/redactor/langs/'.substr($userLang, 0, 2).'.js'));
-    rex_view::addJsFile($addon->getAssetsUrl('cache/plugins.'.$userLang.'.js'));
-    rex_view::addJsFile($addon->getAssetsUrl('cache/profiles.js'));
-    rex_view::addJsFile($addon->getAssetsUrl('redactor.js'));
+    rex_extension::register('PACKAGES_INCLUDED', function() use ($addon) {
+        $pages = [];
+        $pages = rex_extension::registerPoint(new rex_extension_point('REDACTOR_PAGES', $pages));
 
-    rex_view::setJsProperty('clang_id', rex_clang::getCurrentId());
+        if (in_array(rex_be_controller::getCurrentPage(), $pages)) {
+            rex_view::addCssFile($addon->getAssetsUrl('vendor/redactor/redactor.css'));
+            rex_view::addCssFile($addon->getAssetsUrl('redactor.css'));
+
+            $userLang = rex::getUser()->getLanguage();
+            if ('' === trim($userLang)) {
+                $userLang = rex::getProperty('lang');
+            }
+
+            rex_view::addJsFile($addon->getAssetsUrl('vendor/redactor/redactor.js'));
+            rex_view::addJsFile($addon->getAssetsUrl('vendor/redactor/langs/'.substr($userLang, 0, 2).'.js'));
+            rex_view::addJsFile($addon->getAssetsUrl('cache/plugins.'.$userLang.'.js'));
+            rex_view::addJsFile($addon->getAssetsUrl('cache/profiles.js'));
+            rex_view::addJsFile($addon->getAssetsUrl('redactor.js'));
+
+            rex_view::setJsProperty('clang_id', rex_clang::getCurrentId());
+        }
+
+
+    }, rex_extension::LATE);
 }
