@@ -72,7 +72,7 @@ Dazu müsste der Code für die Urls angepasst werden.
                     break;
                 case 'rex-yf-person':
                     // ein anderes Beispiel 
-                    $url = /index.php?person=$matches[3];
+                    $url = '/index.php?person='.$matches[3];
                     break;
             }
             return $url;
