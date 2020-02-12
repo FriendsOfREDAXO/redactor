@@ -1,3 +1,8 @@
+.redactor-styles {
+    font-family: inherit;
+    line-height: inherit;
+}
+
 .redactor-box.redactor-styles-on .redactor-toolbar {
     display: flex !important;
     align-items: center;
