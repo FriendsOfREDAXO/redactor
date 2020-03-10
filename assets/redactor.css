@@ -7,7 +7,7 @@
     display: flex !important;
     align-items: center;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-grow: 1;
     padding: 0 4px;
     background-color: #fafafa;
@@ -41,3 +41,4 @@
 .redactor-air a.re-button.re-separator {
     display: none;
 }
+
