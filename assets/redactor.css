@@ -4,7 +4,11 @@
 }
 
 .redactor-box.redactor-styles-on .redactor-toolbar {
+    display: flex !important;
     align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
     padding: 0 4px;
     background-color: #fafafa;
     border-bottom: 1px solid rgba(0, 0, 0, 0.075);
@@ -37,3 +41,4 @@
 .redactor-air a.re-button.re-separator {
     display: none;
 }
+
