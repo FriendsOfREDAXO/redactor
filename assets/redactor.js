@@ -15,6 +15,7 @@ $(document).on('rex:ready',function(event, container) {
             if ($profile !== '' && redactor_profiles[$profile]) {
                 let options = redactor_profiles[$profile];
                 options.lang = redactorLang;
+                options.pasteImages = false;
                 $R('.redactor-editor--' + $profile, options);
             }
         }
