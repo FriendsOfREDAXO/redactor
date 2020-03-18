@@ -39,7 +39,7 @@ if (rex::isBackend() && rex::getUser()) {
         rex_view::addJsFile($addon->getAssetsUrl('cache/profiles.js'));
         rex_view::addJsFile($addon->getAssetsUrl('redactor.js'));
 
-        rex_view::setJsProperty('clang_id', rex_clang::getCurrentId());
+        rex_view::setJsProperty('redactor_rex_clang_getCurrentId', rex_clang::getCurrentId());
         rex_view::setJsProperty('redactor_rex_url_media', rex_url::media());
 
     }, rex_extension::LATE);

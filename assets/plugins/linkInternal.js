@@ -31,7 +31,7 @@
 
         open: function () {
             let that = this;
-            let linkMap = openLinkMap('', '&clang=' + rex.clang_id);
+            let linkMap = openLinkMap('', '&clang=' + rex.redactor_rex_clang_getCurrentId);
             $(linkMap).on('rex:selectLink', function (event, url, label) {
                 event.preventDefault();
                 linkMap.close();
