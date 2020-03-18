@@ -1,7 +1,7 @@
 /*
     Redactor
-    Version 3.3.3
-    Updated: February 12, 2020
+    Version 3.3.4
+    Updated: February 27, 2020
 
     http://imperavi.com/redactor/
 
@@ -18353,4 +18353,9 @@ $R.add('class', 'widget.component', {
         $R('[data-redactor]');
     });
 
+    // Export for webpack
+    if (typeof module === 'object' && module.exports) {
+        module.exports = Redactor;
+        module.exports.Redactor = Redactor;
+    }
 }());
