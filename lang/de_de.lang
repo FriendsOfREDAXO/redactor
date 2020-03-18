@@ -55,6 +55,7 @@ redactor_plugin_link_title = Link
 redactor_plugin_link_insert = Link einfügen
 redactor_plugin_link_unlink = Link entfernen
 redactor_plugin_linkInternal_title = Linkmap öffnen
+redactor_plugin_linkMedia_title = Medium verlinken
 redactor_plugin_linkYForm_title = YForm
 redactor_plugin_lists_title = Listen
 redactor_plugin_ol_title = 1. geordnete Liste
