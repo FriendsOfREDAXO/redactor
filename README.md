@@ -22,6 +22,7 @@
 - ol
 - outdent
 - pre 
+- quote
 - redo
 - separator (|)
 - sub
