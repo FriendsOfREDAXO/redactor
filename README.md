@@ -25,6 +25,7 @@
 - quote
 - redo
 - separator (|)
+- style[code|mark|var|kbd|sup|sub]
 - sub
 - sup
 - ul
