@@ -24,6 +24,11 @@ redactor_profile_plugins_notice = Plugins kommasepariert notieren
 redactor_profile_selector = Selektor
 redactor_profiles = Profile
 
+redactor_plugin_alignment_center_title = Text zentriert ausrichten
+redactor_plugin_alignment_left_title = Text linksbündig ausrichten
+redactor_plugin_alignment_justify_title = Blocksatz
+redactor_plugin_alignment_right_title = Text rechtsbündig ausrichten
+redactor_plugin_alignment_title = Ausrichtung
 redactor_plugin_blockquote_title = Zitat
 redactor_plugin_blockquote_tooltip = Zitat
 redactor_plugin_bold_title = B

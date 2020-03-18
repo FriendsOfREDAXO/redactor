@@ -2,6 +2,7 @@
 
 ## Plugins
 
+- alignment
 - blockquote
 - bold
 - deleted
