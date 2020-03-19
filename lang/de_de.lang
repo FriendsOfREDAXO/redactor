@@ -48,6 +48,7 @@ redactor_plugin_h5_tooltip = Überschrift 5
 redactor_plugin_h6_title = H6
 redactor_plugin_h6_tooltip = Überschrift 6
 redactor_plugin_hr_title = Linie
+redactor_plugin_image_title = Bild
 redactor_plugin_indent_title = > Einzug vergrößern
 redactor_plugin_italic_title = I
 redactor_plugin_italic_tooltip = Kursiv

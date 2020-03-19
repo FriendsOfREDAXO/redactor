@@ -41,6 +41,19 @@ if (rex::isBackend() && rex::getUser()) {
 
         rex_view::setJsProperty('redactor_rex_clang_getCurrentId', rex_clang::getCurrentId());
         rex_view::setJsProperty('redactor_rex_url_media', rex_url::media());
+        if (rex_addon::get('mediapool')->isAvailable()) {
+            rex_view::setJsProperty('redactor_rex_media_getImageTypes', rex_media::getImageTypes());
+        }
+
+        $imageUrlPath = rex_url::media();
+        if (rex_addon::get('media_manager')->isAvailable()) {
+            $imageUrlPath = 'index.php?rex_media_type=redactorImage&rex_media_file=';
+
+            if (rex_addon::get('yrewrite')->isAvailable()) {
+                $imageUrlPath = '/media/redactorImage/';
+            }
+        }
+        rex_view::setJsProperty('redactor_imageUrlPath', $imageUrlPath);
 
     }, rex_extension::LATE);
 }

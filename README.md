@@ -14,6 +14,7 @@
 - h6
 - hr
 - html
+- image
 - indent
 - italic
 - linkExternal
