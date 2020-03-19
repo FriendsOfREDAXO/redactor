@@ -14,24 +14,25 @@ $addon = rex_addon::get('redactor');
 
 if (rex::isBackend() && rex::getUser()) {
 
-    $cacheFile = $addon->getCachePath('profiles.js');
-    if (!file_exists($cacheFile)) {
-        Redactor::createProfileFiles();
-    }
-
-    $cacheFile = $addon->getCachePath('plugins.js');
-    if (!file_exists($cacheFile)) {
-        Redactor::createPluginFile();
-    }
-
     rex_extension::register('PACKAGES_INCLUDED', function() use ($addon) {
-        rex_view::addCssFile($addon->getAssetsUrl('vendor/redactor/redactor.css'));
-        rex_view::addCssFile($addon->getAssetsUrl('redactor.css'));
 
         $userLang = rex::getUser()->getLanguage();
         if ('' === trim($userLang)) {
             $userLang = rex::getProperty('lang');
         }
+
+        $cacheFile = $addon->getCachePath('profiles.js');
+        if (!file_exists($cacheFile)) {
+            Redactor::createProfileFiles();
+        }
+
+        $cacheFile = $addon->getCachePath('plugins.'.$userLang.'.js');
+        if (!file_exists($cacheFile)) {
+            Redactor::createPluginFile();
+        }
+
+        rex_view::addCssFile($addon->getAssetsUrl('vendor/redactor/redactor.css'));
+        rex_view::addCssFile($addon->getAssetsUrl('redactor.css'));
 
         rex_view::addJsFile($addon->getAssetsUrl('vendor/redactor/redactor.js'));
         rex_view::addJsFile($addon->getAssetsUrl('vendor/redactor/langs/'.substr($userLang, 0, 2).'.js'));

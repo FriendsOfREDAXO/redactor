@@ -84,10 +84,17 @@ class Redactor
 
     public static function createPluginFile()
     {
-        /** @todo add extension point REDACTOR_PLUGIN_DIR */
-        $dirs = [rex_addon::get('redactor')->getAssetsPath('plugins')];
+        $dirs = rex_extension::registerPoint(
+            new rex_extension_point('REDACTOR_PLUGIN_DIR',
+                [rex_addon::get('redactor')->getAssetsPath('plugins')]
+            )
+        );
+
         $plugins = [];
         foreach ($dirs as $dir) {
+            if (!file_exists($dir)) {
+                continue;
+            }
             foreach (rex_finder::factory($dir)->filesOnly()->sort() as $file) {
                 $plugins[] = rex_file::get($file);
             }
@@ -104,7 +111,7 @@ class Redactor
             $content .= 'let redactorTranslations = '.json_encode($translations, JSON_PRETTY_PRINT).';'."\n\n";
             $content .= implode("\n", $plugins);
 
-            $cacheFile = rex_path::addonCache('redactor', 'plugins_'.$locale.'.js');
+            $cacheFile = rex_path::addonCache('redactor', 'plugins.'.$locale.'.js');
             if (false === rex_file::put($cacheFile, $content)) {
                 echo rex_view::error(rex_i18n::msg('redactor_error_save_profiles'));
             }
