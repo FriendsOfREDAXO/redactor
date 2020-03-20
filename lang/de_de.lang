@@ -4,6 +4,9 @@ redactor_error_save_profile = Profile konnten nicht erstellt werden.
 
 redactor_help = Hilfe
 
+redactor_clear_cache = Cache löschen
+redactor_cache_deleted = Cache wurde gelöscht
+
 redactor_profile = Profil
 redactor_profile_add = hinzufügen
 redactor_profile_copy = kopieren

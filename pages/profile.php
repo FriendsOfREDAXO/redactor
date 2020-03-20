@@ -9,6 +9,7 @@
  * file that was distributed with this source code.
  */
 
+$addon = rex_addon::get('redactor');
 
 $func = rex_request('func', 'string');
 $message = '';
@@ -44,13 +45,20 @@ if ($message != '') {
 if ($func == 'add' || $func == 'edit') {
     $id = rex_request('id', 'int');
 
+    $form = rex_form::factory(rex::getTable('redactor_profile'), '', 'id='.$id);
+    $formLabel = rex_i18n::msg('redactor_profile_add');
+
     if ($func == 'edit') {
         $formLabel = rex_i18n::msg('redactor_profile_edit');
-    } elseif ($func == 'add') {
-        $formLabel = rex_i18n::msg('redactor_profile_add');
+
+        rex_extension::register('REX_FORM_SAVED', static function (rex_extension_point $ep) use ($addon, $form) {
+            if ($form !== $ep->getParam('form')) {
+                return;
+            }
+            $addon->clearCache();
+        });
     }
 
-    $form = rex_form::factory(rex::getTable('redactor_profile'), '', 'id='.$id);
     $field = $form->addTextField('name');
     $field->setLabel(rex_i18n::msg('redactor_profile_name'));
 
@@ -92,8 +100,6 @@ if ($func == 'add' || $func == 'edit') {
     $content = $fragment->parse('core/page/section.php');
     echo $content;
 } else {
-    Redactor::createProfileFiles();
-
     $list = rex_list::factory('SELECT `id`, `name`, `description`, CONCAT(".redactor-editor--", `name`) as `selector` FROM `'.rex::getTable('redactor_profile').'` ORDER BY `name` ASC');
     $list->addTableAttribute('class', 'table-striped');
     $list->setNoRowsMessage(rex_i18n::msg('redactor_profile_no_results'));

@@ -26,3 +26,9 @@ page:
             title: 'translate:help'
             icon: rex-icon fa-info-circle
             itemclass: pull-right
+        clear_cache:
+            title: 'translate:clear_cache'
+            itemclass: 'pull-right'
+            href:
+                page: redactor/profile
+                func: clear_cache
