@@ -9,12 +9,12 @@ redactor_cache_deleted = Cache wurde gelöscht
 
 redactor_profile = Profil
 redactor_profile_add = hinzufügen
-redactor_profile_copy = kopieren
+redactor_profile_copy = duplizieren
 redactor_profile_edit = bearbeiten
 redactor_profile_description = Beschreibung
 redactor_profile_functions = Funktionen
 redactor_profile_max_height = Maximalhöhe
-redactor_profile_message_copy_success = Prodil wurde erfolgreich kopiert.
+redactor_profile_message_copy_success = Profil wurde erfolgreich dupliziert.
 redactor_profile_min_height = Mindesthöhe
 redactor_profile_name = Name
 redactor_profile_no_results = Keine Profile gefunden
