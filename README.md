@@ -41,7 +41,7 @@ Ein Profil wird entsprechend wie folgt angelegt:
 
 ```
 html,undo,|,redo,h1,h2,h3,h4,bold,italic,|,image,blockquote,lists[indent],ol,ul,linkExternal,linkInternal,hr,linkYForm[rex_yform_test=last_name|rex_yform_news=title],table,widget
-
+```
 
 ## Modulbeispiel
 
@@ -55,6 +55,7 @@ Der in der Profilverwaltung erstellte Selector wird der Textarea als css-class z
 ### Ausgabe
 ```html
 REX_VALUE[id="1" output="html"]
+```
 
 ## Redactor Plugins
 
@@ -105,7 +106,4 @@ Dazu müsste der Code für die Urls angepasst werden.
         $ep->getSubject()
     );
 }, rex_extension::NORMAL);
-```
-
-
 ```
