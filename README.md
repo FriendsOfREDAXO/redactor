@@ -1,6 +1,6 @@
 # Redactor Editor
 
-## Verfügbare Plugins 
+## Plugins 
 
 - alignment
 - blockquote
@@ -35,6 +35,16 @@
 - underline
 - undo
 
+## Redactor Plugins
+
+- counter (via Profil aktivieren)
+- limiter (via Profil aktivieren)
+- specialchars
+- table
+- video
+- widget
+
+
 ## Profil 
 
 Ein Profil wird entsprechend wie folgt angelegt: 
@@ -56,15 +66,6 @@ Der in der Profilverwaltung erstellte Selector wird der Textarea als css-class z
 ```html
 REX_VALUE[id="1" output="html"]
 ```
-
-## Redactor Plugins
-
-- counter (via Profil aktivieren)
-- limiter (via Profil aktivieren)
-- specialchars
-- table
-- video
-- widget
 
 
 ## Hinweise 
