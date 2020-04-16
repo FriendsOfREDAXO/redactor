@@ -1,6 +1,6 @@
 # Redactor Editor
 
-## Plugins
+## Verfügbare Plugins 
 
 - alignment
 - blockquote
@@ -35,6 +35,26 @@
 - underline
 - undo
 
+## Profil 
+
+Ein Profil wird entsprechend wie folgt angelegt: 
+
+```
+html,undo,|,redo,h1,h2,h3,h4,bold,italic,|,image,blockquote,lists[indent],ol,ul,linkExternal,linkInternal,hr,linkYForm[rex_yform_test=last_name|rex_yform_news=title],table,widget
+
+
+## Modulbeispiel
+
+### Eingabe
+Der in der Profilverwaltung erstellte Selector wird der Textarea als css-class zugeordnet. 
+
+```html
+<textarea class="form-control redactor-editor--full" name="REX_INPUT_VALUE[1]">REX_VALUE[1]</textarea>
+```
+
+### Ausgabe
+```html
+REX_VALUE[id="1" output="html"]
 
 ## Redactor Plugins
 
@@ -87,14 +107,5 @@ Dazu müsste der Code für die Urls angepasst werden.
 }, rex_extension::NORMAL);
 ```
 
-### Eingabe
-```html
-<textarea class="form-control redactor-editor--full" name="REX_INPUT_VALUE[1]">REX_VALUE[1]</textarea>
-```
 
-### Ausgabe
-```html
-REX_VALUE[id="1" output="html"]
 ```
-
-Wichtig ist, dass man die Klasse jeweils abändert, diese steht dann im Backend bei Redactor in dem Punkt Selektor.
