@@ -4,7 +4,7 @@ author: Friends Of REDAXO
 supportpage: github.com/FriendsOfREDAXO/redactor
 
 vendor_versions:
-    redactor: '3.3.4'
+    redactor: '3.3.5'
 
 conflicts:
     packages:
