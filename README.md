@@ -41,9 +41,13 @@
 ## Redactor Plugins
 
 - counter (via Profil aktivieren)
+- fontcolor
+- fontfamily
+- fontsize
 - limiter (via Profil aktivieren)
 - specialchars
 - table
+- textdirection
 - video
 - widget
 
