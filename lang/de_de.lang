@@ -27,6 +27,12 @@ redactor_profile_plugins_notice = Plugins kommasepariert notieren
 redactor_profile_selector = Selektor
 redactor_profiles = Profile
 
+redactor_plugin_cancel = Abrechen
+redactor_plugin_edit = Bearbeiten
+redactor_plugin_insert = Einfügen
+redactor_plugin_save = Speichern
+redactor_plugin_unlink = Link entfernen
+
 redactor_plugin_alignment_center_title = Text zentriert ausrichten
 redactor_plugin_alignment_left_title = Text linksbündig ausrichten
 redactor_plugin_alignment_justify_title = Blocksatz
@@ -58,6 +64,10 @@ redactor_plugin_italic_tooltip = Kursiv
 redactor_plugin_link_title = Link
 redactor_plugin_link_insert = Link einfügen
 redactor_plugin_link_unlink = Link entfernen
+redactor_plugin_linkEmail_label_email = E-Mail-Adresse
+redactor_plugin_linkEmail_label_text = Text
+redactor_plugin_linkEmail_title = E-Mail-Adresse als Link einfügen
+redactor_plugin_linkEmail_tooltip = E-Mail-Adresse als Link einfügen
 redactor_plugin_linkInternal_title = Linkmap öffnen
 redactor_plugin_linkMedia_title = Medium verlinken
 redactor_plugin_linkYForm_title = YForm

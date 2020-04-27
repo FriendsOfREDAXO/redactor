@@ -17,6 +17,7 @@
 - image
 - indent
 - italic
+- linkEmail
 - linkExternal
 - linkInternal
 - linkMedia
