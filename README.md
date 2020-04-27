@@ -21,6 +21,7 @@
 - linkExternal
 - linkInternal
 - linkMedia
+- linkTelephone
 - linkYForm[tableNameA=field|rex_yf_news=title]
 - lists[ul|ol|indent|outdent]
 - ol
