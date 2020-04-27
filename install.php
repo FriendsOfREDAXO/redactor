@@ -16,9 +16,13 @@ $files = [
     'vendor/redactor/redactor.css' => 'vendor/redactor/redactor.css',
     'vendor/redactor/redactor.js' => 'vendor/redactor/redactor.js',
     'vendor/redactor/_plugins/counter/counter.js' => 'plugins/redactor_counter.js',
+    'vendor/redactor/_plugins/fontcolor/fontcolor.js' => 'plugins/redactor_fontcolor.js',
+    'vendor/redactor/_plugins/fontfamily/fontfamily.js' => 'plugins/redactor_fontfamily.js',
+    'vendor/redactor/_plugins/fontsize/fontsize.js' => 'plugins/redactor_fontsize.js',
     'vendor/redactor/_plugins/limiter/limiter.js' => 'plugins/redactor_limiter.js',
     'vendor/redactor/_plugins/specialchars/specialchars.js' => 'plugins/redactor_specialchars.js',
     'vendor/redactor/_plugins/table/table.js' => 'plugins/redactor_table.js',
+    'vendor/redactor/_plugins/textdirection/textdirection.js' => 'plugins/redactor_textdirection.js',
     'vendor/redactor/_plugins/video/video.js' => 'plugins/redactor_video.js',
     'vendor/redactor/_plugins/widget/widget.js' => 'plugins/redactor_widget.js',
 ];
