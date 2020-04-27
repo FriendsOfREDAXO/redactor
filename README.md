@@ -5,6 +5,7 @@
 - alignment
 - blockquote
 - bold
+- cleaner
 - deleted
 - h1
 - h2
