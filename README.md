@@ -6,6 +6,7 @@
 - blockquote
 - bold
 - cleaner
+- clip
 - deleted
 - format; format[p|h1]; format[Sher=p.sher|Lock=p.lock]
 - h1
