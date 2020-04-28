@@ -20,6 +20,7 @@ $files = [
     'vendor/redactor/_plugins/fontfamily/fontfamily.js' => 'plugins/redactor_fontfamily.js',
     'vendor/redactor/_plugins/fontsize/fontsize.js' => 'plugins/redactor_fontsize.js',
     'vendor/redactor/_plugins/limiter/limiter.js' => 'plugins/redactor_limiter.js',
+    'vendor/redactor/_plugins/properties/properties.js' => 'plugins/redactor_properties.js',
     'vendor/redactor/_plugins/specialchars/specialchars.js' => 'plugins/redactor_specialchars.js',
     'vendor/redactor/_plugins/table/table.js' => 'plugins/redactor_table.js',
     'vendor/redactor/_plugins/textdirection/textdirection.js' => 'plugins/redactor_textdirection.js',
