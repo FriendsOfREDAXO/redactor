@@ -45,7 +45,9 @@
 - fontcolor
 - fontfamily
 - fontsize
+- fullscreen
 - limiter (via Profil aktivieren)
+- properties
 - specialchars
 - table
 - textdirection
