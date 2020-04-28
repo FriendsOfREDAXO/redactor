@@ -7,6 +7,7 @@
 - bold
 - cleaner
 - deleted
+- format; format[p|h1]; format[Sher=p.sher|Lock=p.lock]
 - h1
 - h2
 - h3
