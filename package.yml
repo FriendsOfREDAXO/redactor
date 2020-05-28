@@ -1,5 +1,5 @@
 package: redactor
-version: '2.0.0'
+version: '2.1.0'
 author: Friends Of REDAXO
 supportpage: github.com/FriendsOfREDAXO/redactor
 
@@ -32,3 +32,167 @@ page:
             href:
                 page: redactor/profile
                 func: clear_cache
+
+editor:
+    options:
+        # Autoparse
+        autoparse: true
+        autoparseStart: true
+        autoparsePaste: true
+        autoparseLinks: true
+        autoparseImages: true
+        autoparseVideo: true
+
+        # Button
+        buttonsTextLabeled: true
+
+        # Clean
+        cleanOnEnter: true
+        cleanInlineOnEnter: false
+        removeScript: true
+        removeNewLines: false
+        removeComments: true
+        replaceTags: {'b': 'strong', 'i': 'em', 'strike': 'del'}
+
+    options_unsupported:
+        # Autosave
+        autosave: false
+        autosaveName: false
+        autosaveData: false
+
+        # Button
+        buttons: ['html', 'format', 'bold', 'italic', 'deleted', 'lists', 'image', 'file', 'link']
+        buttonsAdd: []
+        buttonsAddFirst: false # Object Boolean
+        buttonsAddAfter: false # Object Boolean
+        buttonsAddBefore: false # Object Boolean
+        buttonsHide: []
+        buttonsHideOnMobile: []
+        activeButtons: {b: 'bold', strong: 'bold', i: 'italic', em: 'italic', del: 'deleted', strike: 'deleted'}
+        activeButtonsAdd: {}
+
+        # Click-To-Edit
+        clickToEdit: false
+        clickToSave: false
+        clickToCancel: false
+
+        # File
+        fileUpload: false
+        fileUploadParam: 'file'
+        fileData: false
+        fileAttachment: false
+
+        # Focus
+        focus: false
+        focusEnd: false
+
+        # Formatting
+        breakline: false
+        markup: 'p'
+        enterKey: true
+        formatting: ['p', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+        formattingAdd: false # Object Boolean
+        formattingHide: false # Array Boolean
+
+        # Height and Width
+        minHeight: false
+        maxHeight: false
+        maxWidth: false
+
+        # Image
+        imageUpload: false # Boolean String Function
+        imageUploadParam: 'file'
+        imageData: false # Object Boolean
+        imageFigure: false
+        imageEditable: true
+        imageLink: true
+        imageCaption: true
+        imagePosition: false # Boolean Object
+        imageFloatMargin: '10px'
+        imageResizable: false
+        imageObserve: true
+
+        # Link
+        linkNewTab: false
+        linkTarget: false # Boolean String
+        linkTitle: false
+        linkNofollow: false
+        linkSize: 30 # Number
+        linkValidation: true
+
+        # Misc
+        animation: true
+        lang: 'en'
+        direction: 'ltr'
+        spellcheck: true
+        structure: false
+        scrollTarget: false
+        placeholder: false # Boolean String
+        inline: false
+        plugins: []
+        callbacks: {}
+        grammarly: true
+        notranslate: false
+
+        # Paste
+        pastePlainText: false
+        pasteLinkTarget: false # Boolean String
+        pasteImages: true
+        pasteLinks: true
+        pasteClean: true
+        pasteKeepStyle: []
+        pasteKeepClass: []
+        pasteKeepAttrs: ['td', 'th']
+        pasteBlockTags: ['pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'table', 'tbody', 'thead', 'tfoot', 'th', 'tr', 'td', 'ul', 'ol', 'li', 'blockquote', 'p', 'figure', 'figcaption']
+        pasteInlineTags: ['a', 'img', 'br', 'strong', 'ins', 'code', 'del', 'span', 'samp', 'kbd', 'sup', 'sub', 'mark', 'var', 'cite', 'small', 'b', 'u', 'em', 'i']
+
+        # Pre
+        preClass: false # String Boolean
+        preSpaces: 4 # Number Boolean
+
+        # Shortcodes
+        shortcodes: # Boolean Object
+            'p.': { format: 'p' }
+            'quote.': { format: 'blockquote' }
+            'pre.': { format: 'pre' }
+            'h1.': { format: 'h1' }
+            'h2.': { format: 'h2' }
+            'h3.': { format: 'h3' }
+            'h4.': { format: 'h4' }
+            'h5.': { format: 'h5' }
+            'h6.': { format: 'h6' }
+            #'1.': { format: 'ol' }
+            '*.': { format: 'ul' }
+
+        # shortcuts
+        shortcuts: {} # Boolean Object
+        shortcutsAdd: false # Boolean Object
+
+        # Source
+        source: true # Boolean Object
+        showSource: false
+
+        # Styles
+        styles: true
+        stylesClass: 'redactor-styles'
+
+        # Tab
+        tabindex: false # Boolean Number
+        tabAsSpaces: false # Boolean Number
+        tabKey: true
+
+        # Toolbar
+        air: false
+        toolbar: true
+        toolbarFixed: true
+        toolbarFixedTarget: 'document' # Node String
+        toolbarFixedTopOffset: 0 # Number
+        toolbarExternal: false
+        toolbarContext: true
+
+        # Upload
+        dragUpload: true
+        multipleUpload: true
+        clipboardUpload: true
+        uploadData: false
+
