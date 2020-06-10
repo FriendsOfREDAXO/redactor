@@ -36,9 +36,8 @@ class Redactor
 
             $redactorPlugins = [];
             if ('' !== trim($profile['plugins'])) {
-                $pattern = '/,|\[[^]]+\](*SKIP)(*FAIL)/';
-                $plugins = preg_split($pattern,trim($profile['plugins']));
-
+                $pattern = '/\[[^]]+\](*SKIP)(*FAIL)|,/';
+                $plugins = array_map('trim', preg_split($pattern,trim($profile['plugins'])));
                 foreach ($plugins as $plugin) {
                     $plugin = trim($plugin);
                     if (preg_match('/(.*)\[(.*)\]/', $plugin, $matches)) {
