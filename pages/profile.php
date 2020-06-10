@@ -24,6 +24,7 @@ if ($func == 'copy') {
         if ($sql->getRows() == 1) {
             $profile = $profile[0];
             unset($profile['id']);
+            $profile['name'] = $profile['name'].' '.rex_i18n::msg('redactor_profile_name_copy');
             $sqlInsert = rex_sql::factory();
             try {
                 $sqlInsert->setTable(rex::getTable('redactor_profile'));

@@ -17,6 +17,7 @@ redactor_profile_max_height = Maximalhöhe
 redactor_profile_message_copy_success = Profil wurde erfolgreich dupliziert.
 redactor_profile_min_height = Mindesthöhe
 redactor_profile_name = Name
+redactor_profile_name_copy = Kopie
 redactor_profile_no_results = Keine Profile gefunden
 redactor_profile_plugin_counter = Statusleiste anzeigen
 redactor_profile_plugin_counter_notice = Fügt einen Zeichen- und Wortzähler hinzu.
