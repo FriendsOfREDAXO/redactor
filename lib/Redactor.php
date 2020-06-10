@@ -16,6 +16,11 @@ class Redactor
         $sql = rex_sql::factory();
         $profiles = $sql->getArray('SELECT * FROM `'.rex::getTable('redactor_profile').'`');
 
+        $sprogOpenTag = '';
+        if (rex_addon::get('sprog')->isAvailable()) {
+            $sprogOpenTag = trim(\Sprog\Wildcard::getOpenTag());
+        }
+
         $redactorProfiles = [];
         foreach ($profiles as $profile) {
             $name = $profile['name'];
@@ -46,6 +51,10 @@ class Redactor
                         foreach ($parameters as $parameter) {
                             if (strpos($parameter, '=') !== false) {
                                 list($key, $value) = explode('=', $parameter, 2);
+                                if ('clip' === $matches[1] && '' !== $sprogOpenTag && $sprogOpenTag === substr($value, 0, strlen($sprogOpenTag))) {
+                                    $value = sprogdown($value);
+                                }
+
                                 $parameterString[] = [$key, $value];
                             } else {
                                 $parameterString[] = $parameter;
