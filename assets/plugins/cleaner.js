@@ -39,12 +39,12 @@
                 this.inline.clearStyle();
 
                 // get the current selection
-                let html = this.selection.getHtml();
+                // let html = this.selection.getHtml();
 
                 // Strip out html
-                html = html.replace(/(<([^>]+)>)/ig, "");
-
-                this.insertion.set(html, true, false);
+                // html = html.replace(/(<([^>]+)>)/ig, "");
+                //
+                // this.insertion.set(html);
             }
         }
     });
