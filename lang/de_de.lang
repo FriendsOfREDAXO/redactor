@@ -141,7 +141,7 @@ redactor_plugin_vendor_properties = Eigenschaften
 # Specialchars
 redactor_plugin_vendor_specialchars = Sonderzeichen
 
-# Specialchars
+# Table
 redactor_plugin_vendor_table = Tabelle
 redactor_plugin_vendor_insert_table = Tabelle einfügen
 redactor_plugin_vendor_insert_row_above = Zeile oberhalb einfügen
@@ -154,7 +154,7 @@ redactor_plugin_vendor_delete_column = Spalte löschen
 redactor_plugin_vendor_delete_row = Zeile löschen
 redactor_plugin_vendor_delete_table = Tabelle löschen
 
-# Textausrichtung
+# Text direction
 redactor_plugin_vendor_change_text_direction = Leserichtung
 redactor_plugin_vendor_left_to_right = Links nach Rechts
 redactor_plugin_vendor_right_to_left = Rechts nach Links
