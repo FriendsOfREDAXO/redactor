@@ -132,8 +132,12 @@ class Redactor
 
     private static function loadPluginLanguageKeys()
     {
-        /** @todo add extension point REDACTOR_LANG_DIR */
-        $dirs = [rex_addon::get('redactor')->getPath('lang')];
+        $dirs = rex_extension::registerPoint(
+            new rex_extension_point('REDACTOR_LANG_DIR',
+                [rex_addon::get('redactor')->getPath('lang')]
+            )
+        );
+
         $msg = [];
         foreach ($dirs as $dir) {
             $file =  $dir.DIRECTORY_SEPARATOR.'de_de.lang';
