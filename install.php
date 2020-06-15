@@ -12,15 +12,21 @@
 
 $addon = rex_addon::get('redactor');
 
-$files = [
+// Vendor-Dateien nur kopieren
+$filesCopy = [
     'vendor/redactor/redactor.css' => 'vendor/redactor/redactor.css',
     'vendor/redactor/redactor.js' => 'vendor/redactor/redactor.js',
+    'vendor/redactor/_plugins/limiter/limiter.js' => 'plugins/redactor_limiter.js',
+];
+
+// Vendor-Dateien kopieren und Übersetzungen anpassen
+// JS-Variable "redactorTranslations.vendor_" wird hinzugefügt
+$filesCopyAndModify = [
     'vendor/redactor/_plugins/counter/counter.js' => 'plugins/redactor_counter.js',
     'vendor/redactor/_plugins/fontcolor/fontcolor.js' => 'plugins/redactor_fontcolor.js',
     'vendor/redactor/_plugins/fontfamily/fontfamily.js' => 'plugins/redactor_fontfamily.js',
     'vendor/redactor/_plugins/fontsize/fontsize.js' => 'plugins/redactor_fontsize.js',
     'vendor/redactor/_plugins/fullscreen/fullscreen.js' => 'plugins/redactor_fullscreen.js',
-    'vendor/redactor/_plugins/limiter/limiter.js' => 'plugins/redactor_limiter.js',
     'vendor/redactor/_plugins/properties/properties.js' => 'plugins/redactor_properties.js',
     'vendor/redactor/_plugins/specialchars/specialchars.js' => 'plugins/redactor_specialchars.js',
     'vendor/redactor/_plugins/table/table.js' => 'plugins/redactor_table.js',
@@ -34,13 +40,26 @@ foreach (rex_i18n::getLocales() as $locale) {
 
     $dir = 'vendor/redactor/_langs/';
     if(file_exists($addon->getPath($dir.$locale.'.js'))) {
-        $files[$dir.$locale.'.js'] = 'vendor/redactor/langs/'.$localeShort.'.js';
+        $filesCopy[$dir.$locale.'.js'] = 'vendor/redactor/langs/'.$localeShort.'.js';
     } elseif(file_exists($addon->getPath($dir.$localeShort.'.js'))) {
-        $files[$dir.$localeShort.'.js'] = 'vendor/redactor/langs/'.$localeShort.'.js';
+        $filesCopy[$dir.$localeShort.'.js'] = 'vendor/redactor/langs/'.$localeShort.'.js';
     }
 }
-foreach ($files as $source => $destination) {
+foreach ($filesCopy as $source => $destination) {
     rex_file::copy($addon->getPath($source), $addon->getAssetsPath($destination));
+}
+foreach ($filesCopyAndModify as $source => $destination) {
+    $fileContent = rex_file::get($addon->getPath($source));
+
+    preg_match_all('/this\.lang\.get\(\'([a-zA-Z-_]*)\'\)/', $fileContent, $matches, PREG_SET_ORDER);
+    $search = [];
+    $replace = [];
+    foreach ($matches as $match) {
+        $search[] = '/'.preg_quote($match[0]).'/';
+        $replace[] = 'redactorTranslations.vendor_'.str_replace('-', '_', $match[1]);
+    }
+    $fileContent = preg_replace($search, $replace, $fileContent);
+    rex_file::put($addon->getAssetsPath($destination), $fileContent);
 }
 
 

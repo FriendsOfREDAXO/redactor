@@ -112,3 +112,57 @@ redactor_plugin_underline_tooltip = Unterstrichen
 redactor_plugin_undo_title = Widerrufen
 redactor_plugin_undo_tooltip = Widerrufen
 
+
+# Übersetzungen der PlugIns, die die direkt vom Vendor kommen
+# Anpassungen dieser Übersetzungen erfolgen in der install.php
+# Counter
+redactor_plugin_vendor_chars = Zeichen
+redactor_plugin_vendor_words = Wörter
+
+# Fontcolor
+redactor_plugin_vendor_fontcolor = Textfarbe
+redactor_plugin_vendor_text = Text
+redactor_plugin_vendor_highlight = Hervorgehoben
+
+# Fontfamily
+redactor_plugin_vendor_fontfamily = Schriftfamilie
+redactor_plugin_vendor_remove_font_family = Schriftfamilie entfernen
+
+# Fontsize
+redactor_plugin_vendor_size = Schriftgröße,
+redactor_plugin_vendor_remove_size = Schriftgröße entfernen
+
+# Fullscreen
+redactor_plugin_vendor_fullscreen = Vollbild
+
+# Properties
+redactor_plugin_vendor_properties = Eigenschaften
+
+# Specialchars
+redactor_plugin_vendor_specialchars = Sonderzeichen
+
+# Specialchars
+redactor_plugin_vendor_table = Tabelle
+redactor_plugin_vendor_insert_table = Tabelle einfügen
+redactor_plugin_vendor_insert_row_above = Zeile oberhalb einfügen
+redactor_plugin_vendor_insert_row_below = Zeile unterhalb einfügen
+redactor_plugin_vendor_insert_column_left = Spalte links einfügen
+redactor_plugin_vendor_insert_column_right = Spalte rechts einfügen
+redactor_plugin_vendor_add_head = Tabellenkopf einfügen
+redactor_plugin_vendor_delete_head = Tabellenkopf löschen
+redactor_plugin_vendor_delete_column = Spalte löschen
+redactor_plugin_vendor_delete_row = Zeile löschen
+redactor_plugin_vendor_delete_table = Tabelle löschen
+
+# Textausrichtung
+redactor_plugin_vendor_change_text_direction = Leserichtung
+redactor_plugin_vendor_left_to_right = Links nach Rechts
+redactor_plugin_vendor_right_to_left = Rechts nach Links
+
+# Video
+redactor_plugin_vendor_video = Video
+redactor_plugin_vendor_video_html_code = Video-Einbettungscode oder Youtube/Vimeo Link
+
+# Widget
+redactor_plugin_vendor_widget = Widget
+redactor_plugin_vendor_widget_html_code = Widget HTML Code
