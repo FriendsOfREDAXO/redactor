@@ -45,16 +45,6 @@ class Redactor
         }
     }
 
-    public static function clean($content)
-    {
-        do {
-            $tmp = $content;
-            $content = preg_replace('#<([^ >]+)[^>]*>[[:space:]]*</\1>#', '', $content);
-        } while ($content !== $tmp);
-
-        return $content;
-    }
-
     public static function createProfileFiles()
     {
         $sql = rex_sql::factory();
