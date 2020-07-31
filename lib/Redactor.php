@@ -11,6 +11,50 @@
 
 class Redactor
 {
+
+    public static function insertProfile($name, $description, $min_height = 0, $max_height = 0, $plugin_counter = 1, $plugin_limiter = '', $plugins = '')
+    {
+        $sql = rex_sql::factory();
+        $sql->setTable(rex::getTablePrefix().'redactor_profile');
+        $sql->setValue('name', $name);
+        $sql->setValue('description', $description);
+        $sql->setValue('min_height', $min_height);
+        $sql->setValue('max_height', $max_height);
+        $sql->setValue('plugin_counter', $plugin_counter);
+        $sql->setValue('plugin_limiter', $plugin_limiter);
+        $sql->setValue('plugins', $plugins);
+
+        try {
+            $sql->insert();
+            return $sql->getLastId();
+        } catch (rex_sql_exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public static function profileExists($name)
+    {
+        $sql = rex_sql::factory();
+        $profile = $sql->setQuery("SELECT `name` FROM `".rex::getTablePrefix()."redactor_profile` WHERE `name` = ".$sql->escape($name)."")->getArray();
+        unset($sql);
+
+        if (!empty($profile)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static function clean($content)
+    {
+        do {
+            $tmp = $content;
+            $content = preg_replace('#<([^ >]+)[^>]*>[[:space:]]*</\1>#', '', $content);
+        } while ($content !== $tmp);
+
+        return $content;
+    }
+
     public static function createProfileFiles()
     {
         $sql = rex_sql::factory();
