@@ -1,5 +1,7 @@
 # Redactor Editor
 
+Bindet den WYSIWYG-Editor [Redactor](http://imperavi.com/redactor/) in aktueller Version im Backend ein.
+
 ## Plugins 
 
 - alignment
