@@ -12,7 +12,7 @@
 class Redactor
 {
 
-    public static function insertProfile($name, $description, $min_height = 0, $max_height = 0, $plugin_counter = 1, $plugin_limiter = '', $plugins = '')
+    public static function insertProfile($name, $description, $min_height = 0, $max_height = 0, $plugin_counter = 1, $plugin_limiter = '', $plugins = '', $settings = '')
     {
         $sql = rex_sql::factory();
         $sql->setTable(rex::getTablePrefix().'redactor_profile');
@@ -23,6 +23,7 @@ class Redactor
         $sql->setValue('plugin_counter', $plugin_counter);
         $sql->setValue('plugin_limiter', $plugin_limiter);
         $sql->setValue('plugins', $plugins);
+        $sql->setValue('settings', $settings);
 
         try {
             $sql->insert();
@@ -98,6 +99,50 @@ class Redactor
                         $redactorPlugins[] = $matches[1];
                     } else {
                         $redactorPlugins[] = $plugin;
+                    }
+                }
+            }
+
+            if ('' !== trim($profile['settings'])) {
+                $settings = explode("\n", $profile['settings']);
+                foreach ($settings as $setting) {
+                    $matches = null;
+
+                    // ignore malformed settings
+                    if (preg_match('/(.*):\W?(.*)/', $setting, $matches)) {
+                        $settingKey = trim($matches[1]);
+                        $settingVal = trim($matches[2]);
+
+                        // determine the dtype of the setting
+                        if ($settingVal === 'true') {    // bool
+                            $settingVal = true;
+                        } elseif ($settingVal === 'false') { // bool
+                            $settingVal = false;
+                        } elseif (ctype_digit($settingVal)) {   // int
+                            $settingVal = intval($settingVal);
+                        } elseif (is_numeric($settingVal)) {    // float
+                            $settingVal = floatval($settingVal);
+                        } elseif (preg_match('/\[(.*)\]/', $settingVal, $matches)) {    // array
+                            $settingVal = explode(',', $matches[1]);
+                            foreach ($settingVal as $i => $val) {
+                                $val = trim($val);
+
+                                // drop surrounding braces for strings
+                                if (preg_match('/["\'](.*)["\']/', $val, $matches)) {
+                                    $val = $matches[1];
+                                }
+                                $settingVal[$i] = $val;
+                            }
+                        } else {
+                            // just assume string and leave the val as it is
+
+                            // drop surrounding braces for strings
+                            if (preg_match('/["\'](.*)["\']/', $settingVal, $matches)) {
+                                $settingVal = $matches[1];
+                            }
+                        }
+
+                        $redactorProfiles[$name][$settingKey] = $settingVal;
                     }
                 }
             }
