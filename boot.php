@@ -41,7 +41,7 @@ if (rex::isBackend() && rex::getUser()) {
         rex_view::addJsFile($addon->getAssetsUrl('redactor.js'));
 
         rex_view::setJsProperty('redactor_rex_clang_getCurrentId', rex_clang::getCurrentId());
-        rex_view::setJsProperty('redactor_rex_url_media', rex_url::media());
+        rex_view::setJsProperty('redactor_rex_url_media', '/media/');
         if (rex_addon::get('mediapool')->isAvailable()) {
             rex_view::setJsProperty('redactor_rex_media_getImageTypes', rex_media::getImageTypes());
         }
