@@ -28,7 +28,7 @@ redactor_profile_plugins_notice = Plugins kommasepariert notieren
 redactor_profile_selector = Selektor
 redactor_profiles = Profile
 
-redactor_plugin_cancel = Abrechen
+redactor_plugin_cancel = Abbrechen
 redactor_plugin_edit = Bearbeiten
 redactor_plugin_insert = Einfügen
 redactor_plugin_save = Speichern
