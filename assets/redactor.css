@@ -44,3 +44,9 @@
     display: none;
 }
 
+/*
+ https://github.com/redaxo/redaxo/commit/1f78fbe7160b1e3000c82e22585f940bf0b132ef#diff-43abea98eb04c3cf2636f7465a3a2cc9334db9c441e7b9a8a77164e801fb8787
+ */
+.redactor-source:focus:not([readonly]) {
+    background-color: #252525;
+}
