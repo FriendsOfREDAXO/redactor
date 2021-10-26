@@ -1,120 +1,133 @@
-.redactor-modal {
-    background-color: #fff;
-    color: #000;
+@mixin _redactor-base-modal {
 
-    & input,
-    & select,
-    & textarea {
+    .redactor-modal {
         background-color: #fff;
-        border-color: #cacfd4;
-    }
+        color: #000;
 
-    & label {
-        color: #555;
-    }
-
-    & input,
-    & textarea,
-    & select {
-        &:hover {
+        & input,
+        & select,
+        & textarea {
             background-color: #fff;
-            border-color: #969fa9;
+            border-color: #cacfd4;
         }
 
-        &:focus {
+        & label {
+            color: #555;
+        }
+
+        & input,
+        & textarea,
+        & select {
+            &:hover {
+                background-color: #fff;
+                border-color: #969fa9;
+            }
+
+            &:focus {
+                background-color: #fff;
+                border-color: rgba(#007dff, .5);
+            }
+
+            &.error {
+                background-color: rgba(#ff3265, .1);
+                border-color: lighten(#ff3265, 15%);
+
+                &:focus {
+                    border-color: #ff3265;
+                }
+            }
+
+            &.success {
+                background-color: rgba(#2fc4b6, .1);
+                border-color: lighten(#2fc4b6, 15%);
+
+                &:focus {
+                    border-color: #2fc4b6;
+                }
+            }
+
+            &:disabled,
+            &.disabled {
+                &,
+                &:hover {
+                    color: rgba(0, 0, 0, .5);
+                    border-color: #cacfd4;
+                    background-color: #fff;
+                }
+            }
+        }
+
+        & .req {
+            color: #ff3265;
+        }
+
+        & .desc {
+            color: rgba(#333, .5);
+        }
+
+        & .redactor-close {
+            color: #000;
+        }
+
+        & button {
+            color: #007dff;
             background-color: #fff;
+            border-color: #007dff;
+        }
+
+        & button:hover {
+            color: rgba(#007dff, .6);
             border-color: rgba(#007dff, .5);
         }
 
-        &.error {
-            background-color: rgba(#ff3265, .1);
-            border-color: lighten(#ff3265, 15%);
+        & button.redactor-button-secondary {
+            border-color: #2a2e34;
+            color: #2a2e34;
 
-            &:focus {
-                border-color: #ff3265;
-            }
-        }
-
-        &.success {
-            background-color: rgba(#2fc4b6, .1);
-            border-color: lighten(#2fc4b6, 15%);
-
-            &:focus {
-                border-color: #2fc4b6;
-            }
-        }
-
-        &:disabled,
-        &.disabled {
-            &,
             &:hover {
-                color: rgba(0, 0, 0, .5);
-                border-color: #cacfd4;
-                background-color: #fff;
+                color: rgba(#2a2e34, .6);
+                border-color: rgba(#2a2e34, .5);
+            }
+        }
+
+        & button.redactor-button-danger,
+        & button.redactor-button-unstyled {
+            border-color: transparent;
+            color: rgba(#2a2e34, .6);
+
+            &:hover {
+                border-color: transparent;
+                color: #ff3265;
             }
         }
     }
 
-    & .req {
-        color: #ff3265;
-    }
-
-    & .desc {
-        color: rgba(#333, .5);
-    }
-
-    & .redactor-close {
+    .redactor-modal-header {
         color: #000;
+        border-bottom-color: rgba(0, 0, 0, .05);
     }
 
-    & button {
-        color: #007dff;
-        background-color: #fff;
-        border-color: #007dff;
-    }
+    .redactor-modal-tabs {
+        border-bottom-color: rgba(0, 0, 0, .05);
 
-    & button:hover {
-        color: rgba(#007dff, .6);
-        border-color: rgba(#007dff, .5);
-    }
-
-    & button.redactor-button-secondary {
-        border-color: #2a2e34;
-        color: #2a2e34;
-
-        &:hover {
-            color: rgba(#2a2e34, .6);
-            border-color: rgba(#2a2e34, .5);
+        & a {
+            color: rgba(0, 0, 0, .5);
         }
-    }
 
-    & button.redactor-button-danger,
-    & button.redactor-button-unstyled {
-        border-color: transparent;
-        color: rgba(#2a2e34, .6);
-
-        &:hover {
-            border-color: transparent;
-            color: #ff3265;
+        & a:hover,
+        & a.active {
+            color: #007dff;
+            border-bottom-color: #007dff;
         }
     }
 }
 
-.redactor-modal-header {
-    color: #000;
-    border-bottom-color: rgba(0, 0, 0, .05);
+body.rex-theme-dark {
+    @include _redactor-base-modal;
 }
 
-.redactor-modal-tabs {
-    border-bottom-color: rgba(0, 0, 0, .05);
-
-    & a {
-        color: rgba(0, 0, 0, .5);
-    }
-
-    & a:hover,
-    & a.active {
-        color: #007dff;
-        border-bottom-color: #007dff;
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-base-modal;
     }
 }

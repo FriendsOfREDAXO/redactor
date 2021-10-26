@@ -1,32 +1,46 @@
-.redactor-air {
-    background-color: rgba(0, 0, 0, .97);
-}
+@mixin _redactor-base-toolbar-air {
 
-.redactor-air a {
-    background-color: rgba(#252525, .95);
-    color: rgba(#fff, .9);
-}
+    .redactor-air {
+        background-color: rgba(0, 0, 0, .97);
+    }
 
-.redactor-air a:hover {
-    background-color: #3d79f2;
-}
+    .redactor-air a {
+        background-color: rgba(#252525, .95);
+        color: rgba(#fff, .9);
+    }
 
-.redactor-air a.redactor-button-active {
-    background-color: rgba(255, 255, 255, .15);
-    color: #fff;
-}
+    .redactor-air a:hover {
+        background-color: #3d79f2;
+    }
 
-.redactor-air a.redactor-button-disabled {
-    &:hover {
+    .redactor-air a.redactor-button-active {
+        background-color: rgba(255, 255, 255, .15);
         color: #fff;
     }
-}
 
-.redactor-air-helper {
-    color: #000;
-    background-color: rgba(255, 255, 255, .85);
+    .redactor-air a.redactor-button-disabled {
+        &:hover {
+            color: #fff;
+        }
+    }
 
-    &:hover {
-        background-color: #fff;
+    .redactor-air-helper {
+        color: #000;
+        background-color: rgba(255, 255, 255, .85);
+
+        &:hover {
+            background-color: #fff;
+        }
     }
 }
+
+body.rex-theme-dark {
+    @include _redactor-base-toolbar-air;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-base-toolbar-air;
+    }
+}
+

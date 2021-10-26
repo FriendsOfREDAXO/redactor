@@ -1,92 +1,105 @@
-.redactor-box {
-    &.redactor-styles-on {
-        background-color: #fff;
-        border-color: rgba(0, 0, 0, .075);
-    }
-}
+@mixin _redactor-base-dark {
 
-.redactor-focus,
-.redactor-focus:focus {
-    &.redactor-styles-on {
-        border-color: #82b7ec !important;
-    }
-}
-
-.redactor-over:hover {
-    &.redactor-styles-on {
-        border-color: #ee698a !important;
-    }
-}
-
-.redactor-source-view,
-.redactor-source-view.redactor-styles-on {
-    border-color: #000 !important;
-}
-
-.redactor-in {
-    figure[data-redactor-type=line] {
-        hr {
-            background-color: rgba(0, 0, 0, .1);
+    .redactor-box {
+        &.redactor-styles-on {
+            background-color: #fff;
+            border-color: rgba(0, 0, 0, .075);
         }
     }
-}
 
-.redactor-component[data-redactor-type=variable] {
-    background-color: rgba(#007dff, .75);
-    color: #fff;
-}
-
-.redactor-component-active {
-    outline-color: rgba(#007dff, .5) !important;
-}
-
-.redactor-component-active[data-redactor-type=image] {
-    & img {
-        outline-color: rgba(#007dff, .5) !important;
+    .redactor-focus,
+    .redactor-focus:focus {
+        &.redactor-styles-on {
+            border-color: #82b7ec !important;
+        }
     }
-}
 
-.redactor-component-active[data-redactor-type=variable] {
-    background-color: #ee698a;
-}
-
-.redactor-component-active[data-redactor-type=video] {
-    & iframe {
-        outline-color: rgba(#007dff, .5) !important;
+    .redactor-over:hover {
+        &.redactor-styles-on {
+            border-color: #ee698a !important;
+        }
     }
-}
 
-.redactor-blur.redactor-styles-on {
-    & .redactor-component-active {
-        outline-color: #ddd !important;
+    .redactor-source-view,
+    .redactor-source-view.redactor-styles-on {
+        border-color: #000 !important;
+    }
 
-        &[data-redactor-type=image] {
-            & img {
-                outline-color: #ddd !important;
+    .redactor-in {
+        figure[data-redactor-type=line] {
+            hr {
+                background-color: rgba(0, 0, 0, .1);
             }
         }
+    }
 
-        &[data-redactor-type=video] {
-            & iframe {
-                outline-color: #ddd !important;
+    .redactor-component[data-redactor-type=variable] {
+        background-color: rgba(#007dff, .75);
+        color: #fff;
+    }
+
+    .redactor-component-active {
+        outline-color: rgba(#007dff, .5) !important;
+    }
+
+    .redactor-component-active[data-redactor-type=image] {
+        & img {
+            outline-color: rgba(#007dff, .5) !important;
+        }
+    }
+
+    .redactor-component-active[data-redactor-type=variable] {
+        background-color: #ee698a;
+    }
+
+    .redactor-component-active[data-redactor-type=video] {
+        & iframe {
+            outline-color: rgba(#007dff, .5) !important;
+        }
+    }
+
+    .redactor-blur.redactor-styles-on {
+        & .redactor-component-active {
+            outline-color: #ddd !important;
+
+            &[data-redactor-type=image] {
+                & img {
+                    outline-color: #ddd !important;
+                }
+            }
+
+            &[data-redactor-type=video] {
+                & iframe {
+                    outline-color: #ddd !important;
+                }
+            }
+
+            &[data-redactor-type=variable] {
+                background-color: #ddd;
             }
         }
+    }
 
-        &[data-redactor-type=variable] {
-            background-color: #ddd;
-        }
+    #redactor-image-resizer {
+        background-color: rgba(#007dff, .9);
+        border-color: #fff;
+    }
+
+    .redactor-file-item {
+        border-color: rgba(0, 0, 0, .2);
+    }
+
+    .redactor-overlay {
+        background-color: $overlay-background-color;
     }
 }
 
-#redactor-image-resizer {
-    background-color: rgba(#007dff, .9);
-    border-color: #fff;
+body.rex-theme-dark {
+    @include _redactor-base-dark;
 }
 
-.redactor-file-item {
-    border-color: rgba(0, 0, 0, .2);
-}
-
-.redactor-overlay {
-    background-color: $overlay-background-color;
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-base-dark;
+    }
 }

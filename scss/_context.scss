@@ -1,22 +1,35 @@
-.redactor-context-toolbar {
-    background-color: rgba(#000, .95);
-    color: #555;
+@mixin _redactor-base-context {
 
-    & a {
-        color: #ccc;
+    .redactor-context-toolbar {
+        background-color: rgba(#000, .95);
+        color: #555;
+
+        & a {
+            color: #ccc;
+        }
+
+        & a:before {
+            border-left-color: rgba(255, 255, 255, .3);
+        }
+
+        & a:hover {
+            color: #fff;
+        }
     }
 
-    & a:before {
-        border-left-color: rgba(255, 255, 255, .3);
-    }
-
-    & a:hover {
-        color: #fff;
+    .redactor-context-toolbar[dir="rtl"] {
+        a:before {
+            border-right-color: rgba(255, 255, 255, .3);
+        }
     }
 }
 
-.redactor-context-toolbar[dir="rtl"] {
-    a:before {
-        border-right-color: rgba(255, 255, 255, .3);
+body.rex-theme-dark {
+    @include _redactor-base-context;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-base-context;
     }
 }

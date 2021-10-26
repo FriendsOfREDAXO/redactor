@@ -1,5 +1,5 @@
-// redaxo custom styles
-@import "redaxo";
+// dark variables
+@import "variables-dark";
 
 // import redactor files modified for dark mode
 @import "base";
@@ -13,3 +13,6 @@
 @import "styles";
 @import "upload";
 @import "progress";
+
+// redaxo custom styles
+@import "redaxo";
