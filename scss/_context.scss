@@ -1,0 +1,22 @@
+.redactor-context-toolbar {
+    background-color: rgba(#000, .95);
+    color: #555;
+
+    & a {
+        color: #ccc;
+    }
+
+    & a:before {
+        border-left-color: rgba(255, 255, 255, .3);
+    }
+
+    & a:hover {
+        color: #fff;
+    }
+}
+
+.redactor-context-toolbar[dir="rtl"] {
+    a:before {
+        border-right-color: rgba(255, 255, 255, .3);
+    }
+}

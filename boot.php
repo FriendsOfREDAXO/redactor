@@ -9,12 +9,22 @@
  * file that was distributed with this source code.
  */
 
+/** @var rex_addon $this */
 
 $addon = rex_addon::get('redactor');
 
 if (rex::isBackend() && rex::getUser()) {
 
     rex_extension::register('PACKAGES_INCLUDED', function() use ($addon) {
+
+        if ($this->getProperty('compile')) {
+            $compiler = new rex_scss_compiler();
+            $compiler->setRootDir($this->getPath('scss/'));
+            $compiler->setScssFile($this->getPath('scss/redactor.scss'));
+            $compiler->setCssFile($this->getPath('assets/redactor.css'));
+            $compiler->compile();
+            rex_dir::copy($this->getPath('assets'), $this->getAssetsPath()); // copy whole assets directory
+        }
 
         $userLang = rex::getUser()->getLanguage();
         if ('' === trim($userLang)) {

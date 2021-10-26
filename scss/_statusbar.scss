@@ -1,0 +1,20 @@
+.redactor-statusbar {
+    background-color: #f8f8f8;
+
+    & li {
+        color: rgba(0, 0, 0, .5);
+        border-right-color: rgba(0, 0, 0, .1);
+    }
+
+    & li:last-child {
+        border-right-color: transparent;
+    }
+
+    & a {
+        color: rgba(0, 0, 0, .5);
+    }
+
+    & a:hover {
+        color: #f03c69;
+    }
+}

@@ -1,0 +1,44 @@
+.redactor-dropdown {
+    background-color: #fff;
+
+    & a {
+        border-bottom-color: rgba(0, 0, 0, .05);
+    }
+
+    & a:last-child {
+        border-bottom-color: transparent;
+    }
+
+    & a {
+        color: #000;
+
+        &:hover {
+            color: #fff !important;
+            background-color: #449aef !important;
+        }
+
+        &.redactor-dropdown-item-disabled {
+            color: rgba(0, 0, 0, .4);
+            background-color: #fff;
+        }
+    }
+}
+
+.redactor-dropdown-selector {
+    & span {
+        &:hover {
+            background-color: #eee;
+        }
+
+        &.active {
+            color: rgba(0, 0, 0, .3);
+            background-color: #eee;
+        }
+    }
+}
+
+.redactor-dropdown-format {
+    & .redactor-dropdown-item-blockquote {
+        color: rgba(0, 0, 0, .4);
+    }
+}

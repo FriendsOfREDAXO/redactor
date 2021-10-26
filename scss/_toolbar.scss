@@ -1,0 +1,58 @@
+.redactor-toolbar a,
+.redactor-air a {
+    color: rgba(0, 0, 0, .85);
+    background-color: rgba(255, 255, 255, .97);
+}
+
+.redactor-toolbar,
+.redactor-air {
+    a:hover {
+        color: #fff;
+        background-color: #449aef;
+    }
+}
+
+.redactor-toolbar a.redactor-button-active {
+    background-color: rgba(245, 245, 245, .95);
+    color: rgba(0, 0, 0, .4);
+}
+
+.redactor-toolbar,
+.redactor-air {
+    a.redactor-button-disabled {
+        &:hover {
+            color: #333;
+        }
+    }
+}
+
+.redactor-source-view {
+    & .redactor-toolbar {
+        background-color: #252525;
+    }
+
+    & .redactor-toolbar a {
+        background-color: #000;
+        color: #fff;
+
+        &:hover {
+            background-color: #449aef;
+        }
+    }
+
+    & .redactor-toolbar a.redactor-button-disabled {
+        &:hover {
+            color: #fff !important;
+            background-color: #000 !important;
+        }
+    }
+}
+
+.re-button-tooltip {
+    background-color: rgba(0, 0, 0, .9);
+    color: rgba(255, 255, 255, .8);
+
+    &:after {
+        border-bottom-color: rgba(0, 0, 0, .9);
+    }
+}

@@ -1,0 +1,67 @@
+.redactor-styles {
+
+    color: $color-text;
+
+    a,
+    a:hover {
+        color: $color-link;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $color-headings;
+    }
+
+    blockquote {
+        color: rgba(0, 0, 0, .5);
+    }
+
+    time, small, var, code, kbd, mark {
+        color: rgba($color-text, .9);
+    }
+
+    dfn,
+    abbr {
+        &[title] {
+            border-bottom-color: rgba(0, 0, 0, .5);
+        }
+    }
+
+    code {
+        background-color: $color-silver;
+    }
+
+    mark {
+        background-color: $color-warning;
+    }
+
+    kbd {
+        border-color: $color-lightgray;
+    }
+
+    pre,
+    pre code {
+        background-color: $color-aluminum;
+        color: rgba($color-text, .85);
+    }
+
+    table {
+        caption {
+            color: rgba(0, 0, 0, .5);
+        }
+
+        th,
+        td {
+            border-color: #eee;
+        }
+
+        tfoot th,
+        tfoot td {
+            color: rgba(0, 0, 0, .5);
+        }
+    }
+}
