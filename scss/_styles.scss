@@ -2,11 +2,11 @@
 
     .redactor-styles {
 
-        color: $color-text;
+        //color: $color-text;
 
         a,
         a:hover {
-            color: $color-link;
+            //color: $color-link;
         }
 
         h1,
@@ -15,7 +15,7 @@
         h4,
         h5,
         h6 {
-            color: $color-headings;
+            //color: $color-headings;
         }
 
         blockquote {
@@ -23,7 +23,7 @@
         }
 
         time, small, var, code, kbd, mark {
-            color: rgba($color-text, .9);
+            //color: rgba($color-text, .9);
         }
 
         dfn,
@@ -34,21 +34,21 @@
         }
 
         code {
-            background-color: $color-silver;
+            //background-color: $color-silver;
         }
 
         mark {
-            background-color: $color-warning;
+            //background-color: $color-warning;
         }
 
         kbd {
-            border-color: $color-lightgray;
+            //border-color: $color-lightgray;
         }
 
         pre,
         pre code {
-            background-color: $color-aluminum;
-            color: rgba($color-text, .85);
+            //background-color: $color-aluminum;
+            //color: rgba($color-text, .85);
         }
 
         table {
