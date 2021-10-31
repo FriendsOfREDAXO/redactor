@@ -1,11 +1,11 @@
-@mixin _redactor-base-statusbar {
+@mixin _redactor-statusbar-dark {
 
     .redactor-statusbar {
-        background-color: #f8f8f8;
+        background-color: #1b232c;
 
         & li {
-            color: rgba(0, 0, 0, .5);
-            border-right-color: rgba(0, 0, 0, .1);
+            color: rgba(255, 255, 255, 0.45);
+            border-right-color: rgba(#151c22, 1);
         }
 
         & li:last-child {
@@ -13,21 +13,21 @@
         }
 
         & a {
-            color: rgba(0, 0, 0, .5);
+            color: rgba(255, 255, 255, 0.45);
         }
 
         & a:hover {
-            color: #f03c69;
+            color: #7abaec;
         }
     }
 }
 
 body.rex-theme-dark {
-    @include _redactor-base-statusbar;
+    @include _redactor-statusbar-dark;
 }
 
 @media (prefers-color-scheme: dark) {
     body.rex-has-theme:not(.rex-theme-light) {
-        @include _redactor-base-statusbar;
+        @include _redactor-statusbar-dark;
     }
 }

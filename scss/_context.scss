@@ -1,4 +1,4 @@
-@mixin _redactor-base-context {
+@mixin _redactor-context-dark {
 
     .redactor-context-toolbar {
         background-color: rgba(#000, .95);
@@ -25,11 +25,11 @@
 }
 
 body.rex-theme-dark {
-    @include _redactor-base-context;
+    @include _redactor-context-dark;
 }
 
 @media (prefers-color-scheme: dark) {
     body.rex-has-theme:not(.rex-theme-light) {
-        @include _redactor-base-context;
+        @include _redactor-context-dark;
     }
 }

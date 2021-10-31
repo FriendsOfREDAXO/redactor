@@ -51,16 +51,16 @@
     background-color: #252525;
 }
 
-@mixin _redactor-base-redaxo {
+@mixin _redactor-redaxo-dark {
 
     .redactor-box.redactor-styles-on .redactor-toolbar {
-        background-color: #fafafa;
-        border-bottom-color: rgba(0, 0, 0, 0.075);
-        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.075) 1.19%, #fafafa 1.19%, #fafafa 50%, rgba(0, 0, 0, 0.075) 50%, rgba(0, 0, 0, 0.075) 51.19%, #fafafa 51.19%, #fafafa 100%);
+        background-color: #1b232c;
+        border-bottom-color: rgba(#151c22, 1);
+        background-image: linear-gradient(0deg, rgba(#151c22, 1) 1.19%, #1b232c 1.19%, #1b232c 50%, rgba(#151c22, 1) 50%, rgba(#151c22, 1) 51.19%, #1b232c 51.19%, #1b232c 100%);
     }
 
     .redactor-toolbar a.re-button.re-separator {
-        background-color: rgba(0, 0, 0, 0.075);
+        background-color: rgba(#151c22, 1);
     }
 
     .redactor-source:focus:not([readonly]) {
@@ -69,11 +69,11 @@
 }
 
 body.rex-theme-dark {
-    @include _redactor-base-redaxo;
+    @include _redactor-redaxo-dark;
 }
 
 @media (prefers-color-scheme: dark) {
     body.rex-has-theme:not(.rex-theme-light) {
-        @include _redactor-base-redaxo;
+        @include _redactor-redaxo-dark;
     }
 }

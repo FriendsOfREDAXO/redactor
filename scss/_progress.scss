@@ -1,4 +1,4 @@
-@mixin _redactor-base-progress {
+@mixin _redactor-progress-dark {
 
     @mixin striped-redactor($color: rgba(255, 255, 255, .2), $angle: 45deg) {
         background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
@@ -13,11 +13,11 @@
 }
 
 body.rex-theme-dark {
-    @include _redactor-base-progress;
+    @include _redactor-progress-dark;
 }
 
 @media (prefers-color-scheme: dark) {
     body.rex-has-theme:not(.rex-theme-light) {
-        @include _redactor-base-progress;
+        @include _redactor-progress-dark;
     }
 }

@@ -1,4 +1,4 @@
-@mixin _redactor-base-dropdown {
+@mixin _redactor-dropdown-dark {
 
     .redactor-dropdown {
         background-color: #fff;
@@ -47,11 +47,11 @@
 }
 
 body.rex-theme-dark {
-    @include _redactor-base-dropdown;
+    @include _redactor-dropdown-dark;
 }
 
 @media (prefers-color-scheme: dark) {
     body.rex-has-theme:not(.rex-theme-light) {
-        @include _redactor-base-dropdown;
+        @include _redactor-dropdown-dark;
     }
 }

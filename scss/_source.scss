@@ -1,4 +1,4 @@
-@mixin _redactor-base-source {
+@mixin _redactor-source-dark {
 
     .redactor-source,
     .redactor-source:hover,
@@ -9,11 +9,11 @@
 }
 
 body.rex-theme-dark {
-    @include _redactor-base-source;
+    @include _redactor-source-dark;
 }
 
 @media (prefers-color-scheme: dark) {
     body.rex-has-theme:not(.rex-theme-light) {
-        @include _redactor-base-source;
+        @include _redactor-source-dark;
     }
 }

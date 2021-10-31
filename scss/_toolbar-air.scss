@@ -1,4 +1,4 @@
-@mixin _redactor-base-toolbar-air {
+@mixin _redactor-toolbar-air-dark {
 
     .redactor-air {
         background-color: rgba(0, 0, 0, .97);
@@ -35,12 +35,12 @@
 }
 
 body.rex-theme-dark {
-    @include _redactor-base-toolbar-air;
+    @include _redactor-toolbar-air-dark;
 }
 
 @media (prefers-color-scheme: dark) {
     body.rex-has-theme:not(.rex-theme-light) {
-        @include _redactor-base-toolbar-air;
+        @include _redactor-toolbar-air-dark;
     }
 }
 

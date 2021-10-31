@@ -2,33 +2,33 @@
 
     .redactor-box {
         &.redactor-styles-on {
-            background-color: #fff;
-            border-color: rgba(0, 0, 0, .075);
+            background-color: rgba(#1b232c, 0.8);
+            border-color: rgba(#151c22, 0.8);
         }
     }
 
     .redactor-focus,
     .redactor-focus:focus {
         &.redactor-styles-on {
-            border-color: #82b7ec !important;
+            border-color: #114b7a !important;
         }
     }
 
     .redactor-over:hover {
         &.redactor-styles-on {
-            border-color: #ee698a !important;
+            border-color: #114b7a !important;
         }
     }
 
     .redactor-source-view,
     .redactor-source-view.redactor-styles-on {
-        border-color: #000 !important;
+        border-color: rgba(#151c22, 0.8) !important;
     }
 
     .redactor-in {
         figure[data-redactor-type=line] {
             hr {
-                background-color: rgba(0, 0, 0, .1);
+                background-color: rgba(#151c22, .2);
             }
         }
     }

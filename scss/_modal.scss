@@ -1,4 +1,4 @@
-@mixin _redactor-base-modal {
+@mixin _redactor-modal-dark {
 
     .redactor-modal {
         background-color: #fff;
@@ -123,11 +123,11 @@
 }
 
 body.rex-theme-dark {
-    @include _redactor-base-modal;
+    @include _redactor-modal-dark;
 }
 
 @media (prefers-color-scheme: dark) {
     body.rex-has-theme:not(.rex-theme-light) {
-        @include _redactor-base-modal;
+        @include _redactor-modal-dark;
     }
 }

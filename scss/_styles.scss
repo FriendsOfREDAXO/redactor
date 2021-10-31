@@ -1,4 +1,4 @@
-@mixin _redactor-base-styles {
+@mixin _redactor-styles-dark {
 
     .redactor-styles {
 
@@ -70,11 +70,11 @@
 }
 
 body.rex-theme-dark {
-    @include _redactor-base-styles;
+    @include _redactor-styles-dark;
 }
 
 @media (prefers-color-scheme: dark) {
     body.rex-has-theme:not(.rex-theme-light) {
-        @include _redactor-base-styles;
+        @include _redactor-styles-dark;
     }
 }
