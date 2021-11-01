@@ -9,53 +9,48 @@
     .redactor-toolbar,
     .redactor-air {
         a:hover {
-            color: #fff;
-            background-color: #449aef;
+            color: rgba(255, 255, 255, 0.75);
+            background-color: #114b7a;
         }
     }
 
     .redactor-toolbar a.redactor-button-active {
-        background-color: rgba(245, 245, 245, .95);
-        color: rgba(0, 0, 0, .4);
+        background-color: #1867a6;
+        color: rgba(255, 255, 255, 0.75);
     }
 
     .redactor-toolbar,
     .redactor-air {
         a.redactor-button-disabled {
             &:hover {
-                color: #333;
+                color: inherit;
             }
         }
     }
 
     .redactor-source-view {
         & .redactor-toolbar {
-            background-color: #252525;
+            background-color: inherit;
         }
 
         & .redactor-toolbar a {
-            background-color: #000;
-            color: #fff;
+            background-color: transparent;
+            color: rgba(255, 255, 255, 0.75);
 
             &:hover {
-                background-color: #449aef;
+                background-color: inherit;
+            }
+
+            &.redactor-button-active {
+                background-color: #1867a6;
             }
         }
 
         & .redactor-toolbar a.redactor-button-disabled {
             &:hover {
-                color: #fff !important;
-                background-color: #000 !important;
+                color: inherit !important;
+                background-color: transparent !important;
             }
-        }
-    }
-
-    .re-button-tooltip {
-        background-color: rgba(0, 0, 0, .9);
-        color: rgba(255, 255, 255, .8);
-
-        &:after {
-            border-bottom-color: rgba(0, 0, 0, .9);
         }
     }
 }
