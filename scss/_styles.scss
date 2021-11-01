@@ -2,11 +2,11 @@
 
     .redactor-styles {
 
-        //color: $color-text;
+        color: rgba(255, 255, 255, 0.75);
 
         a,
         a:hover {
-            //color: $color-link;
+            color: #409be4;
         }
 
         h1,
@@ -15,55 +15,55 @@
         h4,
         h5,
         h6 {
-            //color: $color-headings;
+            color: rgba(255, 255, 255, 0.6);
         }
 
         blockquote {
-            color: rgba(0, 0, 0, .5);
+            color: rgba(255, 255, 255, 0.75);
         }
 
         time, small, var, code, kbd, mark {
-            //color: rgba($color-text, .9);
+            color: rgba(255, 255, 255, 0.75);
         }
 
         dfn,
         abbr {
             &[title] {
-                border-bottom-color: rgba(0, 0, 0, .5);
+                border-bottom-color: rgba(128, 128, 128, .5);
             }
         }
 
         code {
-            //background-color: $color-silver;
+            background-color: #26323f;
         }
 
         mark {
-            //background-color: $color-warning;
+            background-color: #114b7a;
         }
 
         kbd {
-            //border-color: $color-lightgray;
+            border-color: #26323f;
         }
 
         pre,
         pre code {
-            //background-color: $color-aluminum;
-            //color: rgba($color-text, .85);
+            background-color: #202b35;
+            color: #7abaec;
         }
 
         table {
             caption {
-                color: rgba(0, 0, 0, .5);
+                color: rgba(255, 255, 255, 0.45);
             }
 
             th,
             td {
-                border-color: #eee;
+                border-color: #151c22;
             }
 
             tfoot th,
             tfoot td {
-                color: rgba(0, 0, 0, .5);
+                color: rgba(255, 255, 255, 0.45);
             }
         }
     }
