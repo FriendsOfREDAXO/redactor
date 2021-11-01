@@ -1,10 +1,10 @@
 @mixin _redactor-dropdown-dark {
 
     .redactor-dropdown {
-        background-color: #fff;
+        background-color: #1b232c;
 
         & a {
-            border-bottom-color: rgba(0, 0, 0, .05);
+            border-bottom-color: #151c22;
         }
 
         & a:last-child {
@@ -12,16 +12,16 @@
         }
 
         & a {
-            color: #000;
+            color: rgba(255, 255, 255, 0.75);
 
             &:hover {
-                color: #fff !important;
-                background-color: #449aef !important;
+                color: rgba(255, 255, 255, 0.75) !important;
+                background-color: #114b7a !important;
             }
 
             &.redactor-dropdown-item-disabled {
-                color: rgba(0, 0, 0, .4);
-                background-color: #fff;
+                color:rgba(255, 255, 255, 0.45);
+                background-color: inherit;
             }
         }
     }
@@ -29,19 +29,19 @@
     .redactor-dropdown-selector {
         & span {
             &:hover {
-                background-color: #eee;
+                background-color: #26323f;
             }
 
             &.active {
-                color: rgba(0, 0, 0, .3);
-                background-color: #eee;
+                color: rgba(255, 255, 255, 0.75);
+                background-color: #26323f;
             }
         }
     }
 
     .redactor-dropdown-format {
         & .redactor-dropdown-item-blockquote {
-            color: rgba(0, 0, 0, .4);
+            color: rgba(128, 128, 128, .4);
         }
     }
 }
