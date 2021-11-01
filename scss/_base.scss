@@ -29,69 +29,69 @@
     .redactor-in {
         figure[data-redactor-type=line] {
             hr {
-                background-color: rgba(#151c22, .2);
+                background-color: rgba(#2e3b4a, .5);
             }
         }
     }
 
     .redactor-component[data-redactor-type=variable] {
-        background-color: rgba(#007dff, .75);
-        color: #fff;
+        background-color: rgba(#409be4, .75);
+        color: rgba(255, 255, 255, 0.75);
     }
 
     .redactor-component-active {
-        outline-color: rgba(#007dff, .5) !important;
+        outline-color: rgba(#409be4, .5) !important;
     }
 
     .redactor-component-active[data-redactor-type=image] {
         & img {
-            outline-color: rgba(#007dff, .5) !important;
+            outline-color: rgba(#409be4, .5) !important;
         }
     }
 
     .redactor-component-active[data-redactor-type=variable] {
-        background-color: #ee698a;
+        background-color: #409be4;
     }
 
     .redactor-component-active[data-redactor-type=video] {
         & iframe {
-            outline-color: rgba(#007dff, .5) !important;
+            outline-color: rgba(#409be4, .5) !important;
         }
     }
 
     .redactor-blur.redactor-styles-on {
         & .redactor-component-active {
-            outline-color: #ddd !important;
+            outline-color: #2e3b4a !important;
 
             &[data-redactor-type=image] {
                 & img {
-                    outline-color: #ddd !important;
+                    outline-color: #2e3b4a !important;
                 }
             }
 
             &[data-redactor-type=video] {
                 & iframe {
-                    outline-color: #ddd !important;
+                    outline-color: #2e3b4a !important;
                 }
             }
 
             &[data-redactor-type=variable] {
-                background-color: #ddd;
+                background-color: #2e3b4a;
             }
         }
     }
 
     #redactor-image-resizer {
         background-color: rgba(#007dff, .9);
-        border-color: #fff;
+        border-color: rgba(255, 255, 255, 0.75);
     }
 
     .redactor-file-item {
-        border-color: rgba(0, 0, 0, .2);
+        border-color: rgba(128, 128, 128, .5);
     }
 
     .redactor-overlay {
-        //background-color: $overlay-background-color;
+        background-color: rgba(#151c22, .5);
     }
 }
 
