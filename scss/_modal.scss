@@ -1,48 +1,47 @@
 @mixin _redactor-modal-dark {
 
     .redactor-modal {
-        background-color: #fff;
-        color: #000;
+        background-color: #202b35;
+        color: rgba(255, 255, 255, 0.75);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .07), 0 2px 15px rgba(0, 0, 0, .25);
 
         & input,
         & select,
         & textarea {
-            background-color: #fff;
-            border-color: #cacfd4;
+            &,
+            &:hover {
+                background-color: rgba(#1b232c, 0.8);
+                border-color: rgba(#151c22, 0.8);
+            }
         }
 
         & label {
-            color: #555;
+            color: rgba(255, 255, 255, 0.75);
         }
 
         & input,
         & textarea,
         & select {
-            &:hover {
-                background-color: #fff;
-                border-color: #969fa9;
-            }
-
             &:focus {
-                background-color: #fff;
-                border-color: rgba(#007dff, .5);
+                background-color: #151c22;
+                border-color: #114b7a;
             }
 
             &.error {
-                background-color: rgba(#ff3265, .1);
-                border-color: lighten(#ff3265, 15%);
+                background-color: rgba(#1b232c, 0.8);
+                border-color: #801919;
 
                 &:focus {
-                    border-color: #ff3265;
+                    border-color: #801919;
                 }
             }
 
             &.success {
-                background-color: rgba(#2fc4b6, .1);
-                border-color: lighten(#2fc4b6, 15%);
+                background-color: rgba(#1b232c, 0.8);
+                border-color: #0d6a38;
 
                 &:focus {
-                    border-color: #2fc4b6;
+                    border-color: #0d6a38;
                 }
             }
 
@@ -50,75 +49,62 @@
             &.disabled {
                 &,
                 &:hover {
-                    color: rgba(0, 0, 0, .5);
-                    border-color: #cacfd4;
-                    background-color: #fff;
+                    color: rgba(255, 255, 255, 0.75);
+                    background-color: rgba(#202b35, 0.6);
+                    border-color: rgba(#1b232c, 0.6);
                 }
             }
         }
 
         & .req {
-            color: #ff3265;
+            color: #801919;
         }
 
         & .desc {
-            color: rgba(#333, .5);
+            color: rgba(255, 255, 255, 0.45);
         }
 
         & .redactor-close {
-            color: #000;
+            color: rgba(255, 255, 255, 0.75);
         }
 
         & button {
-            color: #007dff;
-            background-color: #fff;
-            border-color: #007dff;
+            color: rgba(255, 255, 255, 0.75);
+            background-color: #1867a6;
+            border-color: darken(#1867a6, 15%);
         }
 
         & button:hover {
-            color: rgba(#007dff, .6);
-            border-color: rgba(#007dff, .5);
+            background-color: lighten(#1867a6, 4%);
+            border-color: darken(#1867a6, 10%);
         }
 
         & button.redactor-button-secondary {
-            border-color: #2a2e34;
-            color: #2a2e34;
+            background-color: rgba(#26323f, 0.8);
+            border-color: rgba(darken(#26323f, 15%), 0.8);
 
             &:hover {
-                color: rgba(#2a2e34, .6);
-                border-color: rgba(#2a2e34, .5);
+                background-color: lighten(#26323f, 4%);
+                border-color: darken(#26323f, 10%);
             }
         }
 
         & button.redactor-button-danger,
         & button.redactor-button-unstyled {
+            background-color: transparent;
             border-color: transparent;
-            color: rgba(#2a2e34, .6);
+            color: rgba(255, 255, 255, 0.75);
 
             &:hover {
                 border-color: transparent;
-                color: #ff3265;
+                color: #7abaec;
             }
         }
     }
 
     .redactor-modal-header {
-        color: #000;
-        border-bottom-color: rgba(0, 0, 0, .05);
-    }
-
-    .redactor-modal-tabs {
-        border-bottom-color: rgba(0, 0, 0, .05);
-
-        & a {
-            color: rgba(0, 0, 0, .5);
-        }
-
-        & a:hover,
-        & a.active {
-            color: #007dff;
-            border-bottom-color: #007dff;
-        }
+        color: rgba(255, 255, 255, 0.75);
+        border-bottom-color: #151c22;
     }
 }
 
