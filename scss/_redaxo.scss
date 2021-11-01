@@ -54,9 +54,9 @@
 @mixin _redactor-redaxo-dark {
 
     .redactor-box.redactor-styles-on .redactor-toolbar {
-        background-color: #1b232c;
+        background-color: #202b35;
         border-bottom-color: rgba(#151c22, 1);
-        background-image: linear-gradient(0deg, rgba(#151c22, 1) 1.19%, #1b232c 1.19%, #1b232c 50%, rgba(#151c22, 1) 50%, rgba(#151c22, 1) 51.19%, #1b232c 51.19%, #1b232c 100%);
+        background-image: linear-gradient(0deg, rgba(#151c22, 1) 1.19%, #202b35 1.19%, #202b35 50%, rgba(#151c22, 1) 50%, rgba(#151c22, 1) 51.19%, #202b35 51.19%, #202b35 100%);
     }
 
     .redactor-toolbar a.re-button.re-separator {
@@ -64,7 +64,7 @@
     }
 
     .redactor-source:focus:not([readonly]) {
-        background-color: #252525;
+        background-color: #151c22;
     }
 }
 
