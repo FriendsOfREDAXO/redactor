@@ -14,6 +14,7 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.075);
     background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.075) 1.19%, #fafafa 1.19%, #fafafa 50%, rgba(0, 0, 0, 0.075) 50%, rgba(0, 0, 0, 0.075) 51.19%, #fafafa 51.19%, #fafafa 100%);
     background-size: 84px 84px;
+    border-radius: 3px 3px 0 0;
 }
 
 .redactor-toolbar a {
@@ -42,6 +43,10 @@
 
 .redactor-air a.re-button.re-separator {
     display: none;
+}
+
+.redactor-statusbar {
+    border-radius: 0 0 3px 3px;
 }
 
 /*
