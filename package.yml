@@ -2,7 +2,7 @@ package: redactor
 version: '2.2.0'
 author: Friends Of REDAXO
 supportpage: github.com/FriendsOfREDAXO/redactor
-compile: 1
+compile: 0
 
 vendor_versions:
     redactor: '3.5.1'
