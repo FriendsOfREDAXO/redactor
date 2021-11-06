@@ -9,11 +9,14 @@
  * file that was distributed with this source code.
  */
 
-$file = rex_file::get(rex_path::addon('redactor', 'README.md'));
-$body = rex_markdown::factory()->parse($file);
+/** @var rex_addon $this */
+
+$fragment = new rex_fragment();
+$fragment->setVar('content', rex_markdown::factory()->parse(rex_file::get($this->getPath('README.md'))), false);
+$content = $fragment->parse('core/page/docs.php');
 
 $fragment = new rex_fragment();
 $fragment->setVar('title', rex_i18n::msg('redactor_help'));
-$fragment->setVar('body', $body, false);
+$fragment->setVar('body', $content, false);
 
 echo $fragment->parse('core/page/section.php');
