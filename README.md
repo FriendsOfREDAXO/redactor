@@ -2,6 +2,8 @@
 
 Bindet den WYSIWYG-Editor [Redactor](http://imperavi.com/redactor/) in aktueller Version im Backend ein.
 
+![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/redactor/assets/redactor.png)
+
 ## Plugins 
 
 - alignment
