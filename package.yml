@@ -25,6 +25,7 @@ page:
         help:
             title: 'translate:help'
             icon: rex-icon fa-info-circle
+            itemclass: 'pull-right'
             subPath: 'README.md'
         clear_cache:
             title: 'translate:clear_cache'
