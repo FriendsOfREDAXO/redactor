@@ -2,7 +2,7 @@ redactor_title = Redactor
 
 redactor_error_save_profile = Kunde inte skapa profilerna
 
-redactor_help = Hjälp
+redactor_help = Dokumentation
 
 redactor_clear_cache = Radera cachen
 redactor_cache_deleted = Cachen raderades
