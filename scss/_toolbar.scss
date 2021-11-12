@@ -1,0 +1,66 @@
+@mixin _redactor-toolbar-dark {
+
+    .redactor-toolbar a,
+    .redactor-air a {
+        color: rgba(255, 255, 255, 0.75);
+        background-color: transparent;
+    }
+
+    .redactor-toolbar,
+    .redactor-air {
+        a:hover {
+            color: rgba(255, 255, 255, 0.75);
+            background-color: #114b7a;
+        }
+    }
+
+    .redactor-toolbar a.redactor-button-active {
+        background-color: #1867a6;
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .redactor-toolbar,
+    .redactor-air {
+        a.redactor-button-disabled {
+            &:hover {
+                color: inherit;
+            }
+        }
+    }
+
+    .redactor-source-view {
+        & .redactor-toolbar {
+            background-color: inherit;
+        }
+
+        & .redactor-toolbar a {
+            background-color: transparent;
+            color: rgba(255, 255, 255, 0.75);
+
+            &:hover {
+                background-color: inherit;
+            }
+
+            &.redactor-button-active {
+                background-color: #1867a6;
+            }
+        }
+
+        & .redactor-toolbar a.redactor-button-disabled {
+            &:hover {
+                color: inherit !important;
+                background-color: transparent !important;
+            }
+        }
+    }
+}
+
+body.rex-theme-dark {
+    @include _redactor-toolbar-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-toolbar-dark;
+    }
+}

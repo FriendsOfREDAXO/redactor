@@ -1,0 +1,19 @@
+@mixin _redactor-source-dark {
+
+    .redactor-source,
+    .redactor-source:hover,
+    .redactor-source:focus {
+        background-color: rgba(#1b232c, 0.8);
+        color: #7abaec;
+    }
+}
+
+body.rex-theme-dark {
+    @include _redactor-source-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-source-dark;
+    }
+}

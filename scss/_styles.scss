@@ -1,0 +1,80 @@
+@mixin _redactor-styles-dark {
+
+    .redactor-styles {
+
+        color: rgba(255, 255, 255, 0.75);
+
+        a,
+        a:hover {
+            color: #409be4;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        blockquote {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        time, small, var, code, kbd, mark {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        dfn,
+        abbr {
+            &[title] {
+                border-bottom-color: rgba(128, 128, 128, .5);
+            }
+        }
+
+        code {
+            background-color: #26323f;
+        }
+
+        mark {
+            background-color: #114b7a;
+        }
+
+        kbd {
+            border-color: #26323f;
+        }
+
+        pre,
+        pre code {
+            background-color: #202b35;
+            color: #7abaec;
+        }
+
+        table {
+            caption {
+                color: rgba(255, 255, 255, 0.45);
+            }
+
+            th,
+            td {
+                border-color: #151c22;
+            }
+
+            tfoot th,
+            tfoot td {
+                color: rgba(255, 255, 255, 0.45);
+            }
+        }
+    }
+}
+
+body.rex-theme-dark {
+    @include _redactor-styles-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-styles-dark;
+    }
+}
