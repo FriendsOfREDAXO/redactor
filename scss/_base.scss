@@ -1,0 +1,106 @@
+@mixin _redactor-base-dark {
+
+    .redactor-box {
+        &.redactor-styles-on {
+            background-color: rgba(#1b232c, 0.8);
+            border-color: rgba(#151c22, 0.8);
+        }
+    }
+
+    .redactor-focus,
+    .redactor-focus:focus {
+        &.redactor-styles-on {
+            border-color: #114b7a !important;
+            background-color: #151c22;
+        }
+    }
+
+    .redactor-over:hover {
+        &.redactor-styles-on {
+            border-color: #114b7a !important;
+        }
+    }
+
+    .redactor-source-view,
+    .redactor-source-view.redactor-styles-on {
+        border-color: rgba(#151c22, 0.8) !important;
+    }
+
+    .redactor-in {
+        figure[data-redactor-type=line] {
+            hr {
+                background-color: rgba(#2e3b4a, .5);
+            }
+        }
+    }
+
+    .redactor-component[data-redactor-type=variable] {
+        background-color: rgba(#409be4, .75);
+        color: rgba(255, 255, 255, 0.75);
+    }
+
+    .redactor-component-active {
+        outline-color: rgba(#409be4, .5) !important;
+    }
+
+    .redactor-component-active[data-redactor-type=image] {
+        & img {
+            outline-color: rgba(#409be4, .5) !important;
+        }
+    }
+
+    .redactor-component-active[data-redactor-type=variable] {
+        background-color: #409be4;
+    }
+
+    .redactor-component-active[data-redactor-type=video] {
+        & iframe {
+            outline-color: rgba(#409be4, .5) !important;
+        }
+    }
+
+    .redactor-blur.redactor-styles-on {
+        & .redactor-component-active {
+            outline-color: #2e3b4a !important;
+
+            &[data-redactor-type=image] {
+                & img {
+                    outline-color: #2e3b4a !important;
+                }
+            }
+
+            &[data-redactor-type=video] {
+                & iframe {
+                    outline-color: #2e3b4a !important;
+                }
+            }
+
+            &[data-redactor-type=variable] {
+                background-color: #2e3b4a;
+            }
+        }
+    }
+
+    #redactor-image-resizer {
+        background-color: rgba(#007dff, .9);
+        border-color: rgba(255, 255, 255, 0.75);
+    }
+
+    .redactor-file-item {
+        border-color: rgba(128, 128, 128, .5);
+    }
+
+    .redactor-overlay {
+        background-color: rgba(#151c22, .5);
+    }
+}
+
+body.rex-theme-dark {
+    @include _redactor-base-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-base-dark;
+    }
+}

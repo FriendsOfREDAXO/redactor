@@ -1,0 +1,119 @@
+@mixin _redactor-modal-dark {
+
+    .redactor-modal {
+        background-color: #202b35;
+        color: rgba(255, 255, 255, 0.75);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, .07), 0 2px 15px rgba(0, 0, 0, .25);
+
+        & input,
+        & select,
+        & textarea {
+            &,
+            &:hover {
+                background-color: rgba(#1b232c, 0.8);
+                border-color: rgba(#151c22, 0.8);
+            }
+        }
+
+        & label {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        & input,
+        & textarea,
+        & select {
+            &:focus {
+                background-color: #151c22;
+                border-color: #114b7a;
+            }
+
+            &.error {
+                background-color: rgba(#1b232c, 0.8);
+                border-color: #801919;
+
+                &:focus {
+                    border-color: #801919;
+                }
+            }
+
+            &.success {
+                background-color: rgba(#1b232c, 0.8);
+                border-color: #0d6a38;
+
+                &:focus {
+                    border-color: #0d6a38;
+                }
+            }
+
+            &:disabled,
+            &.disabled {
+                &,
+                &:hover {
+                    color: rgba(255, 255, 255, 0.75);
+                    background-color: rgba(#202b35, 0.6);
+                    border-color: rgba(#1b232c, 0.6);
+                }
+            }
+        }
+
+        & .req {
+            color: #801919;
+        }
+
+        & .desc {
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        & .redactor-close {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        & button {
+            color: rgba(255, 255, 255, 0.75);
+            background-color: #1867a6;
+            border-color: darken(#1867a6, 15%);
+        }
+
+        & button:hover {
+            background-color: lighten(#1867a6, 4%);
+            border-color: darken(#1867a6, 10%);
+        }
+
+        & button.redactor-button-secondary {
+            background-color: rgba(#26323f, 0.8);
+            border-color: rgba(darken(#26323f, 15%), 0.8);
+
+            &:hover {
+                background-color: lighten(#26323f, 4%);
+                border-color: darken(#26323f, 10%);
+            }
+        }
+
+        & button.redactor-button-danger,
+        & button.redactor-button-unstyled {
+            background-color: transparent;
+            border-color: transparent;
+            color: rgba(255, 255, 255, 0.75);
+
+            &:hover {
+                border-color: transparent;
+                color: #7abaec;
+            }
+        }
+    }
+
+    .redactor-modal-header {
+        color: rgba(255, 255, 255, 0.75);
+        border-bottom-color: #151c22;
+    }
+}
+
+body.rex-theme-dark {
+    @include _redactor-modal-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-modal-dark;
+    }
+}

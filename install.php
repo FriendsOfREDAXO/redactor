@@ -16,29 +16,29 @@ $addon = rex_addon::get('redactor');
 $filesCopy = [
     'vendor/redactor/redactor.css' => 'vendor/redactor/redactor.css',
     'vendor/redactor/redactor.js' => 'vendor/redactor/redactor.js',
-    'vendor/redactor/_plugins/limiter/limiter.js' => 'plugins/redactor_limiter.js',
+    'vendor/redactor/plugins/limiter/limiter.js' => 'plugins/redactor_limiter.js',
 ];
 
 // Vendor-Dateien kopieren und Übersetzungen anpassen
 // JS-Variable "redactorTranslations.vendor_" wird hinzugefügt
 $filesCopyAndModify = [
-    'vendor/redactor/_plugins/counter/counter.js' => 'plugins/redactor_counter.js',
-    'vendor/redactor/_plugins/fontcolor/fontcolor.js' => 'plugins/redactor_fontcolor.js',
-    'vendor/redactor/_plugins/fontfamily/fontfamily.js' => 'plugins/redactor_fontfamily.js',
-    'vendor/redactor/_plugins/fontsize/fontsize.js' => 'plugins/redactor_fontsize.js',
-    'vendor/redactor/_plugins/fullscreen/fullscreen.js' => 'plugins/redactor_fullscreen.js',
-    'vendor/redactor/_plugins/properties/properties.js' => 'plugins/redactor_properties.js',
-    'vendor/redactor/_plugins/specialchars/specialchars.js' => 'plugins/redactor_specialchars.js',
-    'vendor/redactor/_plugins/table/table.js' => 'plugins/redactor_table.js',
-    'vendor/redactor/_plugins/textdirection/textdirection.js' => 'plugins/redactor_textdirection.js',
-    'vendor/redactor/_plugins/video/video.js' => 'plugins/redactor_video.js',
-    'vendor/redactor/_plugins/widget/widget.js' => 'plugins/redactor_widget.js',
+    'vendor/redactor/plugins/counter/counter.js' => 'plugins/redactor_counter.js',
+    'vendor/redactor/plugins/fontcolor/fontcolor.js' => 'plugins/redactor_fontcolor.js',
+    'vendor/redactor/plugins/fontfamily/fontfamily.js' => 'plugins/redactor_fontfamily.js',
+    'vendor/redactor/plugins/fontsize/fontsize.js' => 'plugins/redactor_fontsize.js',
+    'vendor/redactor/plugins/fullscreen/fullscreen.js' => 'plugins/redactor_fullscreen.js',
+    'vendor/redactor/plugins/properties/properties.js' => 'plugins/redactor_properties.js',
+    'vendor/redactor/plugins/specialchars/specialchars.js' => 'plugins/redactor_specialchars.js',
+    'vendor/redactor/plugins/table/table.js' => 'plugins/redactor_table.js',
+    'vendor/redactor/plugins/textdirection/textdirection.js' => 'plugins/redactor_textdirection.js',
+    'vendor/redactor/plugins/video/video.js' => 'plugins/redactor_video.js',
+    'vendor/redactor/plugins/widget/widget.js' => 'plugins/redactor_widget.js',
 ];
 
 foreach (rex_i18n::getLocales() as $locale) {
     $localeShort = substr($locale, 0, 2);
 
-    $dir = 'vendor/redactor/_langs/';
+    $dir = 'vendor/redactor/langs/';
     if(file_exists($addon->getPath($dir.$locale.'.js'))) {
         $filesCopy[$dir.$locale.'.js'] = 'vendor/redactor/langs/'.$localeShort.'.js';
     } elseif(file_exists($addon->getPath($dir.$localeShort.'.js'))) {

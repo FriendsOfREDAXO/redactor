@@ -2,7 +2,7 @@ redactor_title = Redactor
 
 redactor_error_save_profile = Profile konnten nicht erstellt werden.
 
-redactor_help = Hilfe
+redactor_help = Dokumentation
 
 redactor_clear_cache = Cache löschen
 redactor_cache_deleted = Cache wurde gelöscht
@@ -30,7 +30,7 @@ redactor_profile_settings_notice = Ein Setting pro Zeile, formatiert als <code>k
 redactor_profile_selector = Selektor
 redactor_profiles = Profile
 
-redactor_plugin_cancel = Abrechen
+redactor_plugin_cancel = Abbrechen
 redactor_plugin_edit = Bearbeiten
 redactor_plugin_insert = Einfügen
 redactor_plugin_save = Speichern

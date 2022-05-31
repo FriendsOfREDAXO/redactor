@@ -1,10 +1,11 @@
 package: redactor
-version: '2.1.1'
+version: '2.3.0'
 author: Friends Of REDAXO
 supportpage: github.com/FriendsOfREDAXO/redactor
+compile: 0
 
 vendor_versions:
-    redactor: '3.3.5'
+    redactor: '3.5.1'
 
 conflicts:
     packages:
@@ -25,10 +26,12 @@ page:
         help:
             title: 'translate:help'
             icon: rex-icon fa-info-circle
-            itemclass: pull-right
+            itemclass: 'pull-right'
+            subPath: 'README.md'
         clear_cache:
             title: 'translate:clear_cache'
             itemclass: 'pull-right'
+            linkClass: 'btn btn-delete'
             href:
                 page: redactor/profile
                 func: clear_cache

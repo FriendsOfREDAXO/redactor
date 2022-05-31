@@ -9,12 +9,22 @@
  * file that was distributed with this source code.
  */
 
+/** @var rex_addon $this */
 
 $addon = rex_addon::get('redactor');
 
 if (rex::isBackend() && rex::getUser()) {
 
     rex_extension::register('PACKAGES_INCLUDED', function() use ($addon) {
+
+        if ($this->getProperty('compile')) {
+            $compiler = new rex_scss_compiler();
+            $compiler->setRootDir($this->getPath('scss/'));
+            $compiler->setScssFile($this->getPath('scss/redactor.scss'));
+            $compiler->setCssFile($this->getPath('assets/redactor.css'));
+            $compiler->compile();
+            rex_dir::copy($this->getPath('assets'), $this->getAssetsPath()); // copy whole assets directory
+        }
 
         $userLang = rex::getUser()->getLanguage();
         if ('' === trim($userLang)) {
@@ -41,7 +51,7 @@ if (rex::isBackend() && rex::getUser()) {
         rex_view::addJsFile($addon->getAssetsUrl('redactor.js'));
 
         rex_view::setJsProperty('redactor_rex_clang_getCurrentId', rex_clang::getCurrentId());
-        rex_view::setJsProperty('redactor_rex_url_media', rex_url::media());
+        rex_view::setJsProperty('redactor_rex_url_media', '/media/');
         if (rex_addon::get('mediapool')->isAvailable()) {
             rex_view::setJsProperty('redactor_rex_media_getImageTypes', rex_media::getImageTypes());
         }

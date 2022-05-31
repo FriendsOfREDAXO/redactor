@@ -1,0 +1,57 @@
+@mixin _redactor-dropdown-dark {
+
+    .redactor-dropdown {
+        background-color: #1b232c;
+
+        & a {
+            border-bottom-color: #151c22;
+        }
+
+        & a:last-child {
+            border-bottom-color: transparent;
+        }
+
+        & a {
+            color: rgba(255, 255, 255, 0.75);
+
+            &:hover {
+                color: rgba(255, 255, 255, 0.75) !important;
+                background-color: #114b7a !important;
+            }
+
+            &.redactor-dropdown-item-disabled {
+                color:rgba(255, 255, 255, 0.45);
+                background-color: inherit;
+            }
+        }
+    }
+
+    .redactor-dropdown-selector {
+        & span {
+            &:hover {
+                background-color: #26323f;
+            }
+
+            &.active {
+                color: rgba(255, 255, 255, 0.75);
+                background-color: #26323f;
+            }
+        }
+    }
+
+    .redactor-dropdown-format {
+        & .redactor-dropdown-item-blockquote {
+            color: rgba(128, 128, 128, .4);
+        }
+    }
+}
+
+body.rex-theme-dark {
+    @include _redactor-dropdown-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-dropdown-dark;
+    }
+}

@@ -1,0 +1,33 @@
+@mixin _redactor-statusbar-dark {
+
+    .redactor-statusbar {
+        background-color: #202b35;
+
+        & li {
+            color: rgba(255, 255, 255, 0.45);
+            border-right-color: rgba(#151c22, 1);
+        }
+
+        & li:last-child {
+            border-right-color: transparent;
+        }
+
+        & a {
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        & a:hover {
+            color: #7abaec;
+        }
+    }
+}
+
+body.rex-theme-dark {
+    @include _redactor-statusbar-dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    body.rex-has-theme:not(.rex-theme-light) {
+        @include _redactor-statusbar-dark;
+    }
+}

@@ -2,7 +2,7 @@ redactor_title = Redactor
 
 redactor_error_save_profile = Profiles could not be created.
 
-redactor_help = Help
+redactor_help = Documentation
 
 redactor_clear_cache = Clear cache
 redactor_cache_deleted = Cache deleted

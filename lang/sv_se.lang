@@ -1,0 +1,168 @@
+redactor_title = Redactor
+
+redactor_error_save_profile = Kunde inte skapa profilerna
+
+redactor_help = Dokumentation
+
+redactor_clear_cache = Radera cachen
+redactor_cache_deleted = Cachen raderades
+
+redactor_profile = Profil
+redactor_profile_add = tillfoga
+redactor_profile_copy = duplicera
+redactor_profile_edit = bearbeta
+redactor_profile_description = Beskrivning
+redactor_profile_functions = Funktioner
+redactor_profile_max_height = Max höjd
+redactor_profile_message_copy_success = Profil duplicerades med framgång
+redactor_profile_min_height = Min höjd
+redactor_profile_name = Namn
+redactor_profile_name_copy = Kopi
+redactor_profile_no_results = Inga profiler hittades
+redactor_profile_plugin_counter = Visa statusfält
+redactor_profile_plugin_counter_notice = Lägger till en tecken- och ordräknare.
+redactor_profile_plugin_limiter = Teckenantal
+redactor_profile_plugin_limiter_notice = Begränsar antalet tecken en användare kan ange.
+redactor_profile_plugins = Plugins
+redactor_profile_plugins_notice = Notera plugins separerade med kommatecken
+redactor_profile_selector = Selektor
+redactor_profiles = Profiler
+
+redactor_plugin_cancel = Avbryta
+redactor_plugin_edit = Bearbeta
+redactor_plugin_insert = Infoga
+redactor_plugin_save = Spara
+redactor_plugin_unlink = Radera länk
+
+redactor_plugin_alignment_center_title = Justera texten centrerad
+redactor_plugin_alignment_left_title = Vänsterjustera text
+redactor_plugin_alignment_justify_title = Höger-/vänster justerad text
+redactor_plugin_alignment_right_title = Högerjustera text
+redactor_plugin_alignment_title = Inriktning
+redactor_plugin_blockquote_title = Citat
+redactor_plugin_blockquote_tooltip = Citat
+redactor_plugin_bold_title = B
+redactor_plugin_bold_tooltip = Fet
+redactor_plugin_cleaner_title = Ta bort formatering
+redactor_plugin_cleaner_tooltip = Ta bort formatering
+redactor_plugin_clip_title = Clips
+redactor_plugin_clip_tooltip = Clips
+redactor_plugin_deleted_title = S
+redactor_plugin_deleted_tooltip = Radera
+redactor_plugin_format_title = Format
+redactor_plugin_format_tooltip = Format
+redactor_plugin_h1_title = H1
+redactor_plugin_h1_tooltip = Rubrik 1
+redactor_plugin_h2_title = H2
+redactor_plugin_h2_tooltip = Rubrik 2
+redactor_plugin_h3_title = H3
+redactor_plugin_h3_tooltip = Rubrik 3
+redactor_plugin_h4_title = H4
+redactor_plugin_h4_tooltip = Rubrik 4
+redactor_plugin_h5_title = H5
+redactor_plugin_h5_tooltip = Rubrik 5
+redactor_plugin_h6_title = H6
+redactor_plugin_h6_tooltip = Rubrik 6
+redactor_plugin_hr_title = Linje
+redactor_plugin_image_title = Bild
+redactor_plugin_indent_title = > Öka indrag
+redactor_plugin_italic_title = I
+redactor_plugin_italic_tooltip = Kursiv
+redactor_plugin_link_title = Länk
+redactor_plugin_link_insert = Infoga länk
+redactor_plugin_link_unlink = Radera länk
+redactor_plugin_linkEmail_label_email = E-post adress
+redactor_plugin_linkEmail_label_text = Text
+redactor_plugin_linkEmail_title = Sätt in e -postadressen som en länk
+redactor_plugin_linkEmail_tooltip = Sätt in e -postadressen som en länk
+redactor_plugin_linkInternal_title = Öppna länkmapp
+redactor_plugin_linkMedia_title = Länka medium
+redactor_plugin_linkTelephone_label_number = Telefonnummer
+redactor_plugin_linkTelephone_label_text = Text
+redactor_plugin_linkTelephone_notice_number = internationell stavning (+4969123456789)
+redactor_plugin_linkTelephone_title = Infoga telefonnummer som länk
+redactor_plugin_linkTelephone_tooltip = Infoga telefonnummer som länk
+redactor_plugin_linkYForm_title = YForm
+redactor_plugin_lists_title = Listor
+redactor_plugin_ol_title = 1. Ordnad lista
+redactor_plugin_outdent_title = < Minska indrag
+redactor_plugin_quote_cancel = Avbryta
+redactor_plugin_quote_insert = Infoga
+redactor_plugin_quote_label_author = Autor
+redactor_plugin_quote_label_cite = Referenz / titel
+redactor_plugin_quote_label_text = Citat
+redactor_plugin_pre_title = Kod
+redactor_plugin_pre_tooltip = Kod
+redactor_plugin_redo_title = Återställ
+redactor_plugin_redo_tooltip = Återställ
+redactor_plugin_style_title = Textstilar
+redactor_plugin_style_code_title = Kod
+redactor_plugin_style_mark_title = Markerad
+redactor_plugin_style_kbd_title = Tangentbordsinmatning
+redactor_plugin_style_sub_title = Lågplacerad
+redactor_plugin_style_sup_title = Högdplacerad
+redactor_plugin_style_var_title = Variabel
+redactor_plugin_subscript_title = Sub
+redactor_plugin_subscript_tooltip = Lågplacerad
+redactor_plugin_superscript_title = Sup
+redactor_plugin_superscript_tooltip = Högdplacerad
+redactor_plugin_ul_title = • oordnad lista
+redactor_plugin_underline_title = U
+redactor_plugin_underline_tooltip = Understruken
+redactor_plugin_undo_title = Dra tillbaka
+redactor_plugin_undo_tooltip = Dra tillbaka
+
+
+# Übersetzungen der PlugIns, die die direkt vom Vendor kommen
+# Anpassungen dieser Übersetzungen erfolgen in der install.php
+# Counter
+redactor_plugin_vendor_chars = Tecken
+redactor_plugin_vendor_words = Ord
+
+# Fontcolor
+redactor_plugin_vendor_fontcolor = Textfärg
+redactor_plugin_vendor_text = Text
+redactor_plugin_vendor_highlight = Markerad
+
+# Fontfamily
+redactor_plugin_vendor_fontfamily = Typsnittsfamilj
+redactor_plugin_vendor_remove_font_family = Radera typsnittsfamilj
+
+# Fontsize
+redactor_plugin_vendor_size = Textstorlek,
+redactor_plugin_vendor_remove_size = Radera textstorlek,
+
+# Fullscreen
+redactor_plugin_vendor_fullscreen = Fullbild
+
+# Properties
+redactor_plugin_vendor_properties = Egenskaper
+
+# Specialchars
+redactor_plugin_vendor_specialchars = Specialtecken
+
+# Table
+redactor_plugin_vendor_table = Tabell
+redactor_plugin_vendor_insert_table = Infoga tabell
+redactor_plugin_vendor_insert_row_above = Infoga raden ovanför
+redactor_plugin_vendor_insert_row_below = Infoga raden nedanför
+redactor_plugin_vendor_insert_column_left = Infoga kolumn till vänster
+redactor_plugin_vendor_insert_column_right = Infoga kolumn till höger
+redactor_plugin_vendor_add_head = Infoga tabellrubrik
+redactor_plugin_vendor_delete_head = Radera tabellrubrik
+redactor_plugin_vendor_delete_column = Radera kolumn
+redactor_plugin_vendor_delete_row = Radera rad
+redactor_plugin_vendor_delete_table = Radera tabell
+
+# Text direction
+redactor_plugin_vendor_change_text_direction = Läseriktning
+redactor_plugin_vendor_left_to_right = Vänster till höger
+redactor_plugin_vendor_right_to_left = Höger till vänster
+
+# Video
+redactor_plugin_vendor_video = Video
+redactor_plugin_vendor_video_html_code = Inbäddningskod för video eller Youtube / Vimeo -länk
+
+# Widget
+redactor_plugin_vendor_widget = Widget
+redactor_plugin_vendor_widget_html_code = Widget HTML Code
