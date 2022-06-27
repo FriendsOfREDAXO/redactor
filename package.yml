@@ -5,7 +5,7 @@ supportpage: github.com/FriendsOfREDAXO/redactor
 compile: 0
 
 vendor_versions:
-    redactor: '3.5.1'
+    redactor: '3.5.2'
 
 conflicts:
     packages:

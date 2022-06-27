@@ -278,7 +278,7 @@
     		var $marker = $R.dom(marker);
             var current = marker.previousSibling;
             var currentText = current.textContent;
-            var re = new RegExp('@' + this.handleStr + '$');
+            var re = new RegExp(this.handleTrigger + this.handleStr + '$');
 
         	currentText = currentText.replace(re, '');
         	current.textContent = currentText;

@@ -1,7 +1,7 @@
 /*
     Redactor
-    Version 3.5.1
-    Updated: July 25, 2021
+    Version 3.5.2
+    Updated: October 7, 2021
 
     http://imperavi.com/redactor/
 
@@ -1340,7 +1340,7 @@ var $R = function(selector, options)
 
 // Globals
 $R.app = [];
-$R.version = '3.5.1';
+$R.version = '3.5.2';
 $R.options = {};
 $R.modules = {};
 $R.services = {};
@@ -4141,7 +4141,6 @@ $R.add('service', 'selection', {
         if (!this.saved && !this.savedComponent && !this.savedElement) return;
 
         this.editor.saveScroll();
-
         if (this.savedElement)
         {
             this.caret.setStart(this.savedElement);
@@ -16475,6 +16474,7 @@ $R.add('module', 'image', {
             complete: function(response)
             {
                 this._insert(response);
+                this.app.broadcast('state', false);
             },
             error: function(response)
             {
@@ -17821,7 +17821,6 @@ $R.add('module', 'buffer', {
     // private
     _saveState: function(html, offset)
     {
-
         var $editor = this.editor.getElement();
 
         this.state = {
@@ -17918,7 +17917,6 @@ $R.add('module', 'buffer', {
         $editor.html(buffer[0]);
         this.offset.set(buffer[1]);
         this._saveState(buffer[0], buffer[1]);
-        this.selection.restore();
 
         this.app.broadcast('undo', buffer[0], buffer[1]);
 
