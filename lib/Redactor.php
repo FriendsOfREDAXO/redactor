@@ -103,6 +103,7 @@ class Redactor
                 }
             }
 
+            // Parse user-supplied settings. This is a bit hacky but "works for now"
             if ('' !== trim($profile['settings'])) {
                 $settings = explode("\n", $profile['settings']);
                 foreach ($settings as $setting) {
@@ -145,6 +146,12 @@ class Redactor
                         $redactorProfiles[$name][$settingKey] = $settingVal;
                     }
                 }
+            }
+
+            // insert default settings from package.yml, overwriting user-supplied settings
+            $default_settings = rex_addon::get('redactor')->getProperty('editor')['options'];
+            foreach ($default_settings as $settingKey => $settingVal) {
+                $redactorProfiles[$name][$settingKey] = $settingVal;
             }
 
             if ($profile['plugin_counter'] === '1') {

@@ -88,35 +88,9 @@ if ($func == 'add' || $func == 'edit') {
     $field->setLabel(rex_i18n::msg('redactor_profile_plugins'));
     $field->setNotice(rex_i18n::msg('redactor_profile_plugins_notice'));
 
-    // the settings field will receive an explicit name b/c it is referenced later on
-    // this should prevent errors if $field belongs to something else then
-    $settings_field = $form->addTextAreaField('settings');
-    $settings_field->setLabel(rex_i18n::msg('redactor_profile_settings'));
-    $settings_field->setNotice(rex_i18n::msg('redactor_profile_settings_notice'));
-
-    // if a new profile is created, load the default settings from package.yml and
-    // inflate the settings input accordingly
-    if ($func === 'add') {
-        $default_options = rex_addon::get('redactor')->getProperty('editor')['options'];
-
-        // generate the key: value map from the options
-        $default_options = array_map(function ($key, $val) {
-            // boolean and array values need special care when converted to string
-            // therefore this conversion is done manually
-            if ($val === true) {
-                $val = 'true';
-            } elseif ($val === false) {
-                $val = 'false';
-            } elseif (is_array($val)) {
-                $val = implode(', ', $val);
-                $val = '[' . $val . ']';
-            }
-            return $key . ': ' . $val;
-        }, array_keys($default_options), array_values($default_options));
-
-        $default_options = implode("\n", $default_options); // lines in a <textarea> are separated by \n
-        $settings_field->setAttribute('value', $default_options);
-    }
+    $field = $form->addTextAreaField('settings');
+    $field->setLabel(rex_i18n::msg('redactor_profile_settings'));
+    $field->setNotice(rex_i18n::msg('redactor_profile_settings_notice'));
 
     if ($func == 'edit') {
         $form->addParam('id', $id);
