@@ -123,3 +123,7 @@ Dazu müsste der Code für die Urls angepasst werden.
     );
 }, rex_extension::NORMAL);
 ```
+
+### Migration von `redactor2` zu `redactor` (3, diese Version)
+
+https://github.com/FriendsOfREDAXO/redactor/issues/11
