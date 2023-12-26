@@ -89,6 +89,7 @@ if ($func == 'add' || $func == 'edit') {
     $field->setNotice(rex_i18n::msg('redactor_profile_plugins_notice'));
 
     $field = $form->addTextAreaField('settings');
+    $field->setAttribute('class', 'form-control codemirror');
     $field->setLabel(rex_i18n::msg('redactor_profile_settings'));
     $field->setNotice(rex_i18n::msg('redactor_profile_settings_notice'));
 
