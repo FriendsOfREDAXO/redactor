@@ -25,6 +25,8 @@ redactor_profile_plugin_limiter = Zeichenanzahl
 redactor_profile_plugin_limiter_notice = Beschränkt die Anzahl der Zeichen, die ein Benutzer eingeben kann.
 redactor_profile_plugins = Plugins
 redactor_profile_plugins_notice = Plugins kommasepariert notieren
+redactor_profile_settings = Settings
+redactor_profile_settings_notice = Ein Setting pro Zeile, formatiert als <code>key: value</code>. Das Einfügen von Bildern wird standardmäßig unterbunden. Um es zu aktivieren, <code>pasteImages: true</code> setzen.
 redactor_profile_selector = Selektor
 redactor_profiles = Profile
 

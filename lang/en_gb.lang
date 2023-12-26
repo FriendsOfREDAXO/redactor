@@ -26,6 +26,8 @@ redactor_profile_plugin_limiter = Number of characters
 redactor_profile_plugin_limiter_notice = Limits the number of characters a user can enter.
 redactor_profile_plugins = Plugins
 redactor_profile_plugins_notice = Note plugins separated by commas
+redactor_profile_settings = Settings
+redactor_profile_settings_notice = Format settings as <code>key: value</code> with one setting per line. Per default, images may not be pasted into the text. In order to activate, set <code>pasteImages: true</code>.
 redactor_profile_selector = Selector
 redactor_profiles = Profile
 

@@ -84,5 +84,6 @@ rex_sql_table::get(rex::getTable('redactor_profile'))
     ->ensureColumn(new rex_sql_column('plugin_counter', 'bool'))
     ->ensureColumn(new rex_sql_column('plugin_limiter', 'varchar(191)'))
     ->ensureColumn(new rex_sql_column('plugins', 'text'))
+    ->ensureColumn(new rex_sql_column('settings', 'text'))
     ->ensureIndex(new rex_sql_index('name', ['name'], rex_sql_index::UNIQUE))
     ->ensure();
