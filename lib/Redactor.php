@@ -77,7 +77,7 @@ class Redactor
             $redactorPlugins = [];
             if ('' !== trim($profile['plugins'])) {
                 $pattern = '/\[[^]]+\](*SKIP)(*FAIL)|,/';
-                $plugins = array_map('trim', preg_split($pattern,trim($profile['plugins'])));
+                $plugins = array_map('trim', preg_split($pattern, trim($profile['plugins'])));
                 foreach ($plugins as $plugin) {
                     $plugin = trim($plugin);
                     if (preg_match('/(.*)\[(.*)\]/', $plugin, $matches)) {
@@ -101,6 +101,11 @@ class Redactor
                         $redactorPlugins[] = $plugin;
                     }
                 }
+            }
+            // insert default settings from package.yml, overwriting user-supplied settings
+            $default_settings = rex_addon::get('redactor')->getProperty('editor')['options'];
+            foreach ($default_settings as $settingKey => $settingVal) {
+                $redactorProfiles[$name][$settingKey] = $settingVal;
             }
 
             // Parse user-supplied settings. This is a bit hacky but "works for now"
@@ -148,12 +153,6 @@ class Redactor
                 }
             }
 
-            // insert default settings from package.yml, overwriting user-supplied settings
-            $default_settings = rex_addon::get('redactor')->getProperty('editor')['options'];
-            foreach ($default_settings as $settingKey => $settingVal) {
-                $redactorProfiles[$name][$settingKey] = $settingVal;
-            }
-
             if ($profile['plugin_counter'] === '1') {
                 $redactorPlugins[] = 'counter';
             }
@@ -180,7 +179,8 @@ class Redactor
     public static function createPluginFile()
     {
         $dirs = rex_extension::registerPoint(
-            new rex_extension_point('REDACTOR_PLUGIN_DIR',
+            new rex_extension_point(
+                'REDACTOR_PLUGIN_DIR',
                 [rex_addon::get('redactor')->getAssetsPath('plugins')]
             )
         );
@@ -219,7 +219,8 @@ class Redactor
     private static function loadPluginLanguageKeys()
     {
         $dirs = rex_extension::registerPoint(
-            new rex_extension_point('REDACTOR_LANG_DIR',
+            new rex_extension_point(
+                'REDACTOR_LANG_DIR',
                 [rex_addon::get('redactor')->getPath('lang')]
             )
         );
