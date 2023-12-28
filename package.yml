@@ -1,5 +1,5 @@
 package: redactor
-version: '2.4.0'
+version: '2.4.1'
 author: Friends Of REDAXO
 supportpage: github.com/FriendsOfREDAXO/redactor
 compile: 0
@@ -47,7 +47,7 @@ editor:
         autoparseVideo: true
 
         # Button
-        buttonsTextLabeled: true
+        buttonsTextLabeled: false
 
         # Clean
         cleanOnEnter: true
@@ -125,7 +125,7 @@ editor:
 
         # Misc
         animation: true
-        lang: 'en'
+        lang: 'de'
         direction: 'ltr'
         spellcheck: true
         structure: false
@@ -198,4 +198,3 @@ editor:
         multipleUpload: true
         clipboardUpload: true
         uploadData: false
-
