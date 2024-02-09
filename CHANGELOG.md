@@ -1,5 +1,20 @@
 # Redactor - Changelog
 
+## 2.4.2 – 09.02.2024
+
+### Bugfixes
+
+* Fehlende update.php ergänzt
+
+
+
+## 2.4.1 – 12.2023
+
+### Features
+
+### Bugfixes
+
+
 
 ## 2.3.0 – 12.11.2021
 
