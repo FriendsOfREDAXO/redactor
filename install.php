@@ -12,13 +12,7 @@
 
 $addon = rex_addon::get('redactor');
 
-// Vendor-Dateien nur kopieren
-$filesCopy = [
-    'vendor/redactor/redactor.css' => 'vendor/redactor/redactor.css',
-    'vendor/redactor/redactor.js' => 'vendor/redactor/redactor.js',
-    'vendor/redactor/plugins/limiter/limiter.js' => 'plugins/redactor_limiter.js',
-];
-
+/*
 // Vendor-Dateien kopieren und Übersetzungen anpassen
 // JS-Variable "redactorTranslations.vendor_" wird hinzugefügt
 $filesCopyAndModify = [
@@ -61,7 +55,7 @@ foreach ($filesCopyAndModify as $source => $destination) {
     $fileContent = preg_replace($search, $replace, $fileContent);
     rex_file::put($addon->getAssetsPath($destination), $fileContent);
 }
-
+*/
 
 $cacheFile = $addon->getCachePath('profiles.js');
 if (file_exists($cacheFile)) {

@@ -1,20 +1,20 @@
 package: redactor
-version: '2.4.2'
+version: '4.0.0-dev'
 author: Friends Of REDAXO
 supportpage: github.com/FriendsOfREDAXO/redactor
 compile: 0
 
 vendor_versions:
-    redactor: '3.5.2'
+    redactor: '4.0.6'
 
 conflicts:
     packages:
         redactor2: '<5'
 
 requires:
-    redaxo: '^5.9'
+    redaxo: '^5.17'
     php:
-        version: '>=7.3'
+        version: '>=8.1'
 
 page:
     title: 'translate:title'
