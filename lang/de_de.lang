@@ -1,8 +1,6 @@
 redactor_title = Redactor
-
-redactor_error_save_profile = Profile konnten nicht erstellt werden.
-
-redactor_help = Dokumentation
+redactor_docs = Dokumentation
+redactor_settings = Einstellungen
 
 redactor_clear_cache = Cache löschen
 redactor_cache_deleted = Cache wurde gelöscht
@@ -14,11 +12,9 @@ redactor_profile_edit = bearbeiten
 redactor_profile_description = Beschreibung
 redactor_profile_functions = Funktionen
 redactor_profile_max_height = Maximalhöhe
-redactor_profile_message_copy_success = Profil wurde erfolgreich dupliziert.
 redactor_profile_min_height = Mindesthöhe
 redactor_profile_name = Name
 redactor_profile_name_copy = Kopie
-redactor_profile_no_results = Keine Profile gefunden
 redactor_profile_plugin_counter = Statusleiste anzeigen
 redactor_profile_plugin_counter_notice = Fügt einen Zeichen- und Wortzähler hinzu.
 redactor_profile_plugin_limiter = Zeichenanzahl
@@ -88,6 +84,7 @@ redactor_plugin_linkYForm_title = YForm
 redactor_plugin_lists_title = Listen
 redactor_plugin_ol_title = 1. geordnete Liste
 redactor_plugin_outdent_title = < Einzug verringern
+# >
 redactor_plugin_quote_cancel = Abbrechen
 redactor_plugin_quote_insert = Einfügen
 redactor_plugin_quote_label_author = Autor
