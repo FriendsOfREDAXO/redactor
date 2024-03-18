@@ -2,7 +2,6 @@ package: redactor
 version: '4.0.0-dev'
 author: Friends Of REDAXO
 supportpage: github.com/FriendsOfREDAXO/redactor
-compile: 0
 
 vendor_versions:
     redactor: '4.0.6'
@@ -17,17 +16,25 @@ requires:
         version: '>=8.1'
 
 page:
-    title: 'translate:title'
-    perm: admin[]
-    pjax: true
+    title: translate:redactor_title
+    icon: rex-icon fa-keyboard
+    perm: redactor[]
     subpages:
         profile:
-            title: 'translate:profiles'
-        help:
-            title: 'translate:help'
+            title: translate:redactor_profiles
+            icon: rex-icon fa-keyboard
+            perm: redactor[]
+        settings:
+            title: translate:redactor_settings
+            icon: rex-icon fa-gear
+            itemclass: pull-right
+            perm: admin
+        docs:
+            title: translate:redactor_docs
+            subPath: README.md
             icon: rex-icon fa-info-circle
-            itemclass: 'pull-right'
-            subPath: 'README.md'
+            itemclass: pull-right
+            perm: redactor[docs]
         clear_cache:
             title: 'translate:clear_cache'
             itemclass: 'pull-right'
@@ -198,3 +205,13 @@ editor:
         multipleUpload: true
         clipboardUpload: true
         uploadData: false
+
+
+default_config:
+#    field: 'Test' # Bei der Installation belegt REDAXO automatisch in der rex_config-Tabelle im Namespace `redactor` im Feld `field` den Wert `Test` 
+
+installer_ignore:
+- .git
+- .gitignore
+- .github
+- .php-cs-fixer.dist.php

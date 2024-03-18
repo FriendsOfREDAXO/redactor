@@ -12,6 +12,14 @@
 
 $addon = rex_addon::get('redactor');
 
+
+/* Tablesets aktualisieren */
+if (rex_addon::get('yform')->isAvailable() && !rex::isSafeMode()) {
+    rex_yform_manager_table_api::importTablesets(rex_file::get(rex_path::addon($addon->getName(), 'install/rex_redactor.tableset.json')));
+    rex_yform_manager_table::deleteCache();
+}
+
+
 /*
 // Vendor-Dateien kopieren und Übersetzungen anpassen
 // JS-Variable "redactorTranslations.vendor_" wird hinzugefügt
@@ -66,18 +74,3 @@ $cacheFile = $addon->getCachePath('plugins.js');
 if (!file_exists($cacheFile)) {
     rex_file::delete($cacheFile);
 }
-
-
-
-rex_sql_table::get(rex::getTable('redactor_profile'))
-    ->ensurePrimaryIdColumn()
-    ->ensureColumn(new rex_sql_column('name', 'varchar(191)'))
-    ->ensureColumn(new rex_sql_column('description', 'text'))
-    ->ensureColumn(new rex_sql_column('min_height', 'int(5)'))
-    ->ensureColumn(new rex_sql_column('max_height', 'int(5)'))
-    ->ensureColumn(new rex_sql_column('plugin_counter', 'bool'))
-    ->ensureColumn(new rex_sql_column('plugin_limiter', 'varchar(191)'))
-    ->ensureColumn(new rex_sql_column('plugins', 'text'))
-    ->ensureColumn(new rex_sql_column('settings', 'text'))
-    ->ensureIndex(new rex_sql_index('name', ['name'], rex_sql_index::UNIQUE))
-    ->ensure();
