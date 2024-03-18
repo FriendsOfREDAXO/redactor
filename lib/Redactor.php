@@ -26,36 +26,36 @@ class Redactor extends \rex_yform_manager_dataset
 
     public static function createProfileFiles()
     {
+
         $sql = rex_sql::factory();
-        $profiles = $sql->getArray('SELECT * FROM `'.rex::getTable('redactor_profile').'`');
+        $profiles = self::query()->find();
 
         $sprogOpenTag = '';
         if (rex_addon::get('sprog')->isAvailable()) {
             $sprogOpenTag = trim(\Sprog\Wildcard::getOpenTag());
         }
 
-        $redactorProfiles = [];
         foreach ($profiles as $profile) {
-            $name = $profile['name'];
+            $name = $profile->getValue('name');
 
             $redactorProfiles[$name]['redaxo']['regex']['id'] = '(.*?)\s\[.*?\]';
 
             $minHeight = 300;
-            if ((int)$profile['min_height'] > 0) {
-                $minHeight = (int)$profile['min_height'];
+            if ((int)$profile->getMinHeight() > 0) {
+                $minHeight = (int)$profile->getMinHeight();
             }
             $maxHeight = 300;
-            if ((int)$profile['max_height'] > 0) {
-                $maxHeight = (int)$profile['max_height'];
+            if ((int)$profile->getMaxHeight() > 0) {
+                $maxHeight = (int)$profile->getMaxHeight();
             }
 
             $redactorProfiles[$name]['minHeight'] = $minHeight.'px';
             $redactorProfiles[$name]['maxHeight'] = $maxHeight.'px';
 
             $redactorPlugins = [];
-            if ('' !== trim($profile['plugins'])) {
+            if ('' !== trim($profile->getPlugins())) {
                 $pattern = '/\[[^]]+\](*SKIP)(*FAIL)|,/';
-                $plugins = array_map('trim', preg_split($pattern, trim($profile['plugins'])));
+                $plugins = array_map('trim', preg_split($pattern, trim($profile->getPlugins())));
                 foreach ($plugins as $plugin) {
                     $plugin = trim($plugin);
                     if (preg_match('/(.*)\[(.*)\]/', $plugin, $matches)) {
@@ -87,8 +87,8 @@ class Redactor extends \rex_yform_manager_dataset
             }
 
             // Parse user-supplied settings. This is a bit hacky but "works for now"
-            if ('' !== trim($profile['settings'])) {
-                $settings = explode("\n", $profile['settings']);
+            if ('' !== trim($profile->getSettings())) {
+                $settings = explode("\n", $profile->getSettings());
                 foreach ($settings as $setting) {
                     $matches = null;
 
@@ -131,13 +131,13 @@ class Redactor extends \rex_yform_manager_dataset
                 }
             }
 
-            if ($profile['plugin_counter'] === '1') {
+            if ($profile->getPluginCounter() === '1') {
                 $redactorPlugins[] = 'counter';
             }
 
-            if ((int)$profile['plugin_limiter'] > 0) {
+            if ((int)$profile->getPluginLimiter() > 0) {
                 $redactorPlugins[] = 'limiter';
-                $redactorProfiles[$name]['limiter'] = (int)$profile['plugin_limiter'];
+                $redactorProfiles[$name]['limiter'] = (int)$profile->getPluginLimiter();
             }
 
             $redactorProfiles[$name]['buttons'] = [];
@@ -214,4 +214,125 @@ class Redactor extends \rex_yform_manager_dataset
         }
         return $msg;
     }
+
+
+    
+    /* Name */
+    /** @api */
+    public function getName() : ?string
+    {
+        return $this->getValue("name");
+    }
+    /** @api */
+    public function setName(mixed $value) : self
+    {
+        $this->setValue("name", $value);
+        return $this;
+    }
+
+    /* Beschreibung */
+    /** @api */
+    public function getDescription(bool $asPlaintext = false) : ?string
+    {
+        if($asPlaintext) {
+            return strip_tags($this->getValue("description"));
+        }
+        return $this->getValue("description");
+    }
+    /** @api */
+    public function setDescription(mixed $value) : self
+    {
+        $this->setValue("description", $value);
+        return $this;
+    }
+            
+    /* Mindesthöhe */
+    /** @api */
+    public function getMinHeight() : ?string
+    {
+        return $this->getValue("min_height");
+    }
+    /** @api */
+    public function setMinHeight(mixed $value) : self
+    {
+        $this->setValue("min_height", $value);
+        return $this;
+    }
+
+    /* Maximalhöhe */
+    /** @api */
+    public function getMaxHeight() : ?string
+    {
+        return $this->getValue("max_height");
+    }
+    /** @api */
+    public function setMaxHeight(mixed $value) : self
+    {
+        $this->setValue("max_height", $value);
+        return $this;
+    }
+
+    /* Statusleiste anzeigen */
+    /** @api */
+    public function getPluginCounter(bool $asBool = false) : mixed
+    {
+        if($asBool) {
+            return (bool) $this->getValue("plugin_counter");
+        }
+        return $this->getValue("plugin_counter");
+    }
+    /** @api */
+    public function setPluginCounter(int $value = 1) : self
+    {
+        $this->setValue("plugin_counter", $value);
+        return $this;
+    }
+            
+    /* Zeichenanzahl */
+    /** @api */
+    public function getPluginLimiter() : ?string
+    {
+        return $this->getValue("plugin_limiter");
+    }
+    /** @api */
+    public function setPluginLimiter(mixed $value) : self
+    {
+        $this->setValue("plugin_limiter", $value);
+        return $this;
+    }
+
+    /* Plugins */
+    /** @api */
+    public function getPlugins(bool $asPlaintext = false) : ?string
+    {
+        if($asPlaintext) {
+            return strip_tags($this->getValue("plugins"));
+        }
+        return $this->getValue("plugins");
+    }
+    /** @api */
+    public function setPlugins(mixed $value) : self
+    {
+        $this->setValue("plugins", $value);
+        return $this;
+    }
+            
+    /* Settings */
+    /** @api */
+    public function getSettings(bool $asPlaintext = false) : ?string
+    {
+        if($asPlaintext) {
+            return strip_tags($this->getValue("settings"));
+        }
+        return $this->getValue("settings");
+    }
+    /** @api */
+    public function setSettings(mixed $value) : self
+    {
+        $this->setValue("settings", $value);
+        return $this;
+    }
+
+
+
 }
