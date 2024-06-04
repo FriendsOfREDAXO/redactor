@@ -62,15 +62,26 @@ if ($func == 'add' || $func == 'edit') {
 
     $field = $form->addTextField('name');
     $field->setLabel(rex_i18n::msg('redactor_profile_name'));
+    if($field->getValue() === null) {
+        $field->setValue("default");
+    }
 
     $field = $form->addTextField('description');
     $field->setLabel(rex_i18n::msg('redactor_profile_description'));
 
+
     $field = $form->addTextField('min_height');
     $field->setLabel(rex_i18n::msg('redactor_profile_min_height'));
+    if($field->getValue() === null) {
+        $field->setValue("200");
+    }
 
     $field = $form->addTextField('max_height');
     $field->setLabel(rex_i18n::msg('redactor_profile_max_height'));
+    if($field->getValue() === null) {
+        $field->setValue("600");
+    }
+
 
     $field = $form->addSelectField('plugin_counter');
     $field->setLabel(rex_i18n::msg('redactor_profile_plugin_counter'));
@@ -87,6 +98,9 @@ if ($func == 'add' || $func == 'edit') {
     $field = $form->addTextAreaField('plugins');
     $field->setLabel(rex_i18n::msg('redactor_profile_plugins'));
     $field->setNotice(rex_i18n::msg('redactor_profile_plugins_notice'));
+    if($field->getValue() === null) {
+        $field->setValue("html,undo,|,redo,h1,h2,h3,h4,bold,italic,|,image,blockquote,lists[indent],ol,ul,linkExternal,linkInternal,hr,linkYForm[rex_yform_test=last_name|rex_yform_news=title],table,widget");
+    }
 
     $field = $form->addTextAreaField('settings');
     $field->setAttribute('class', 'form-control codemirror');
@@ -131,6 +145,7 @@ if ($func == 'add' || $func == 'edit') {
     $content = $list->get();
 
     $fragment = new rex_fragment();
+    $fragment->setVar('title', $addon->i18n('redactor_profiles'), false);
     $fragment->setVar('content', $content, false);
     $content = $fragment->parse('core/page/section.php');
 
