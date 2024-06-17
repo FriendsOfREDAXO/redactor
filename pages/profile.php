@@ -142,8 +142,8 @@ if ($func == 'add' || $func == 'edit') {
         // remove first character of list selector
         $selector = substr($params['list']->getValue('selector'), 1);
         $generic_code = ''.$params['list']->getValue('selector').'';
-        $return = '<div class="text-nowrap" data-redactor-copy-generic="'.$generic_code.'" role="button"> <i class="rex-icon fa-clone"></i> <code>'.$generic_code.'</code></div>';
-        $return .= '<div class="text-nowrap" data-redactor-copy-yform="'.$yform_code.'" role="button"> <i class="rex-icon fa-clone"></i> <code>'.$yform_code.'</code></div>';
+        $return = '<div class="text-nowrap" data-redactor-copy-generic="'.htmlspecialchars($generic_code).'" role="button"> <i class="rex-icon fa-clone"></i> <code>'.$generic_code.'</code></div>';
+        $return .= '<div class="text-nowrap" data-redactor-copy-yform="'.htmlspecialchars($yform_code).'" role="button"> <i class="rex-icon fa-clone"></i> <code>'.$yform_code.'</code></div>';
 
         return $return;
 
