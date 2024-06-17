@@ -22,4 +22,42 @@ $(document).on('rex:ready',function(event, container) {
             }
         }
     })
+    
+    document.querySelectorAll('div[data-redactor-copy-yform]').forEach(function(el) {
+        el.addEventListener('click', data_redactor_copy_yform)
+    })
+    document.querySelectorAll('div[data-redactor-copy-generic]').forEach(function(el) {
+        el.addEventListener('click', data_redactor_copy_generic)
+    })
+
 });
+
+function data_redactor_copy_yform(event) {
+    // Holt das aktuelle Element, auf das geklickt wurde
+    var element = event.currentTarget;
+    // Fügt die Klasse "copied" zum aktuellen Element hinzu
+    element.classList.add('copied');
+    // Sucht das icon-Element im aktuellen Element
+    var iconElement = element.querySelector('i');
+    // Entfernt die Klasse "fa-clone" vom i-Element
+    iconElement.classList.remove('fa-clone');
+    // Fügt die Klasse "fa-check" zum i-Element hinzu
+    iconElement.classList.add('fa-check');
+    // Kopiert den Wert des data-wildcard-copy Attributs in die Zwischenablage
+    navigator.clipboard.writeText(element.getAttribute('data-redactor-copy-yform'));
+};
+
+function data_redactor_copy_generic(event) {
+    // Holt das aktuelle Element, auf das geklickt wurde
+    var element = event.currentTarget;
+    // Fügt die Klasse "copied" zum aktuellen Element hinzu
+    element.classList.add('copied');
+    // Sucht das icon-Element im aktuellen Element
+    var iconElement = element.querySelector('i');
+    // Entfernt die Klasse "fa-clone" vom i-Element
+    iconElement.classList.remove('fa-clone');
+    // Fügt die Klasse "fa-check" zum i-Element hinzu
+    iconElement.classList.add('fa-check');
+    // Kopiert den Wert des data-wildcard-copy Attributs in die Zwischenablage
+    navigator.clipboard.writeText(element.getAttribute('data-redactor-copy-generic'));
+};

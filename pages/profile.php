@@ -135,6 +135,19 @@ if ($func == 'add' || $func == 'edit') {
     $list->setColumnLabel('name', rex_i18n::msg('redactor_profile_name'));
     $list->setColumnLabel('description', rex_i18n::msg('redactor_profile_description'));
     $list->setColumnLabel('selector', rex_i18n::msg('redactor_profile_selector'));
+
+    $list->setColumnFormat('selector', 'custom', static function ($params) {
+
+        $yform_code = '{"class":"form-control '.substr($params['list']->getValue('selector'), 1).'"}';
+        // remove first character of list selector
+        $selector = substr($params['list']->getValue('selector'), 1);
+        $generic_code = ''.$params['list']->getValue('selector').'';
+        $return = '<div class="text-nowrap" data-redactor-copy-generic="'.$generic_code.'" role="button"> <i class="rex-icon fa-clone"></i> <code>'.$generic_code.'</code></div>';
+        $return .= '<div class="text-nowrap" data-redactor-copy-yform="'.$yform_code.'" role="button"> <i class="rex-icon fa-clone"></i> <code>'.$yform_code.'</code></div>';
+
+        return $return;
+
+    });
     $list->setColumnLabel($functions, rex_i18n::msg('redactor_profile_functions'));
 
     $list->setColumnParams('name', ['id' => '###id###', 'func' => 'edit']);
