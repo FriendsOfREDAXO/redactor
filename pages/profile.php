@@ -139,11 +139,14 @@ if ($func == 'add' || $func == 'edit') {
     $list->setColumnFormat('selector', 'custom', static function ($params) {
 
         $yform_code = '{"class":"form-control '.substr($params['list']->getValue('selector'), 1).'"}';
-        // remove first character of list selector
+
         $selector = substr($params['list']->getValue('selector'), 1);
         $generic_code = ''.$params['list']->getValue('selector').'';
-        $return = '<div class="text-nowrap" data-redactor-copy-generic="'.htmlspecialchars($generic_code).'" role="button"> <i class="rex-icon fa-clone"></i> <code>'.$generic_code.'</code></div>';
-        $return .= '<div class="text-nowrap" data-redactor-copy-yform="'.htmlspecialchars($yform_code).'" role="button"> <i class="rex-icon fa-clone"></i> <code>'.$yform_code.'</code></div>';
+        $return = '';
+        $return .= '<clipboard-copy for="redactor-generic-'.$params['list']->getValue('id').'" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>'.$generic_code.'</code></clipboard-copy>';
+        $return .= '<div class="hidden" id="redactor-generic-'.$params['list']->getValue('id').'"><code>'.$generic_code.'</code></div>';
+        $return .= '<br><clipboard-copy for="redactor-yform-'.$params['list']->getValue('id').'" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>'.$yform_code.'</code></clipboard-copy>';
+        $return .= '<div class="hidden" id="redactor-yform-'.$params['list']->getValue('id').'"><code>'.$yform_code.'</code></div>';
 
         return $return;
 
