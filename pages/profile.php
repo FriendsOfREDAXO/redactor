@@ -135,6 +135,22 @@ if ($func == 'add' || $func == 'edit') {
     $list->setColumnLabel('name', rex_i18n::msg('redactor_profile_name'));
     $list->setColumnLabel('description', rex_i18n::msg('redactor_profile_description'));
     $list->setColumnLabel('selector', rex_i18n::msg('redactor_profile_selector'));
+
+    $list->setColumnFormat('selector', 'custom', static function ($params) {
+
+        $yform_code = '{"class":"form-control '.substr($params['list']->getValue('selector'), 1).'"}';
+
+        $selector = substr($params['list']->getValue('selector'), 1);
+        $generic_code = ''.$params['list']->getValue('selector').'';
+        $return = '';
+        $return .= '<clipboard-copy for="redactor-generic-'.$params['list']->getValue('id').'" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>'.$generic_code.'</code></clipboard-copy>';
+        $return .= '<div class="hidden" id="redactor-generic-'.$params['list']->getValue('id').'"><code>'.$generic_code.'</code></div>';
+        $return .= '<br><clipboard-copy for="redactor-yform-'.$params['list']->getValue('id').'" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>'.$yform_code.'</code></clipboard-copy>';
+        $return .= '<div class="hidden" id="redactor-yform-'.$params['list']->getValue('id').'"><code>'.$yform_code.'</code></div>';
+
+        return $return;
+
+    });
     $list->setColumnLabel($functions, rex_i18n::msg('redactor_profile_functions'));
 
     $list->setColumnParams('name', ['id' => '###id###', 'func' => 'edit']);
