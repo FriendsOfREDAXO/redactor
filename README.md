@@ -4,7 +4,7 @@ Bindet den WYSIWYG-Editor [Redactor](http://imperavi.com/redactor/) in Version 3
 
 ![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/redactor/assets/redactor.png)
 
-## Plugins 
+## Funktionen
 
 - alignment
 - blockquote
@@ -83,7 +83,6 @@ Der in der Profilverwaltung erstellte Selector wird der Textarea als css-class z
 ```html
 REX_VALUE[id="1" output="html"]
 ```
-
 
 ## Hinweise 
 
