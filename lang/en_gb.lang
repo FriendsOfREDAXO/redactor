@@ -118,6 +118,12 @@ redactor_plugin_undo_tooltip = Undo
 
 # Übersetzungen der PlugIns, die die direkt vom Vendor kommen
 # Anpassungen dieser Übersetzungen erfolgen in der install.php
+# All
+redactor_plugin_vendor_cancel = Cancel
+redactor_plugin_vendor_insert = Insert
+redactor_plugin_vendor_save = Save
+redactor_plugin_vendor_delete = Delete
+
 # Counter
 redactor_plugin_vendor_chars = Chars
 redactor_plugin_vendor_words = Words
