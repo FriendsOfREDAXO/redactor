@@ -115,6 +115,12 @@ redactor_plugin_undo_tooltip = Dra tillbaka
 
 # Übersetzungen der PlugIns, die die direkt vom Vendor kommen
 # Anpassungen dieser Übersetzungen erfolgen in der install.php
+# All
+redactor_plugin_vendor_cancel = Avbryta
+redactor_plugin_vendor_insert = Infoga
+redactor_plugin_vendor_save = Spara
+redactor_plugin_vendor_delete = Radera
+
 # Counter
 redactor_plugin_vendor_chars = Tecken
 redactor_plugin_vendor_words = Ord
