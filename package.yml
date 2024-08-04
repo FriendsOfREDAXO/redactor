@@ -26,11 +26,11 @@ page:
         help:
             title: 'translate:help'
             icon: rex-icon fa-info-circle
-            itemclass: 'pull-right'
+            itemClass: 'pull-right'
             subPath: 'README.md'
         clear_cache:
             title: 'translate:clear_cache'
-            itemclass: 'pull-right'
+            itemClass: 'pull-right'
             linkClass: 'btn btn-delete'
             href:
                 page: redactor/profile
