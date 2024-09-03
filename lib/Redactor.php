@@ -153,7 +153,7 @@ class Redactor
                 }
             }
 
-            if ($profile['plugin_counter'] === '1') {
+            if ($profile['plugin_counter']) {
                 $redactorPlugins[] = 'counter';
             }
 
