@@ -20,6 +20,7 @@ page:
     title: 'translate:title'
     perm: admin[]
     pjax: true
+    icon: rex-icon fa-align-left
     subpages:
         profile:
             title: 'translate:profiles'
