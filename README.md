@@ -128,3 +128,20 @@ Dazu müsste der Code für die Urls angepasst werden.
 ### Migration von `redactor2` zu `redactor` (3, diese Version)
 
 https://github.com/FriendsOfREDAXO/redactor/issues/11
+
+
+## Lizenz
+
+REDAXO OEM License, siehe [LICENSE.md](https://github.com/alexplusde/neues/blob/master/LICENSE)  
+
+## Autor
+
+**Friends of REDAXO**
+
+## Credits
+
+**Projekt-Leads**  
+[Thomas Blum](https://github.com/tbaddade)
+[Alexander Walther](https://github.com/alxndr-w)
+
+[Und weitere Beteiligte](https://github.com/FriendsOfREDAXO/redactor/graphs/contributors)
