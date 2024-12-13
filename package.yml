@@ -1,5 +1,5 @@
 package: redactor
-version: '2.5.2'
+version: '2.5.3-dev'
 author: Friends Of REDAXO
 supportpage: github.com/FriendsOfREDAXO/redactor
 compile: 0
