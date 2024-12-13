@@ -99,7 +99,7 @@ if ($func == 'add' || $func == 'edit') {
     $field->setLabel(rex_i18n::msg('redactor_profile_plugins'));
     $field->setNotice(rex_i18n::msg('redactor_profile_plugins_notice'));
     if($field->getValue() === null) {
-        $field->setValue("html,undo,|,redo,h1,h2,h3,h4,bold,italic,|,image,blockquote,lists[indent],ol,ul,linkExternal,linkInternal,hr,linkYForm[rex_yform_test=last_name|rex_yform_news=title],table,widget");
+        $field->setValue("html,|,undo,redo,|,h1,h2,h3,h4,bold,italic,|,image,blockquote,lists[indent],ol,ul,linkExternal,linkInternal,hr,linkYForm[rex_yform_test=last_name|rex_yform_news=title],table,widget");
     }
 
     $field = $form->addTextAreaField('settings');

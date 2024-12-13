@@ -65,7 +65,7 @@ Bindet den WYSIWYG-Editor [Redactor](http://imperavi.com/redactor/) in Version 3
 Ein Profil wird entsprechend wie folgt angelegt: 
 
 ```
-html,undo,|,redo,h1,h2,h3,h4,bold,italic,|,image,blockquote,lists[indent],ol,ul,linkExternal,linkInternal,hr,linkYForm[rex_yform_test=last_name|rex_yform_news=title],table,widget
+html,|,undo,redo,|,h1,h2,h3,h4,bold,italic,|,image,blockquote,lists[indent],ol,ul,linkExternal,linkInternal,hr,linkYForm[rex_yform_test=last_name|rex_yform_news=title],table,widget
 ```
 
 Weitere Einstellungen können hinterlegt werden, dazu die Parameter des Vendors beachten: <https://imperavi.com/redactor/docs/settings/overview/>
