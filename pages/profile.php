@@ -144,9 +144,9 @@ if ($func == 'add' || $func == 'edit') {
         $generic_code = ''.$params['list']->getValue('selector').'';
         $return = '';
         $return .= '<clipboard-copy for="redactor-generic-'.$params['list']->getValue('id').'" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>'.$generic_code.'</code></clipboard-copy>';
-        $return .= '<div class="hidden" id="redactor-generic-'.$params['list']->getValue('id').'"><code>'.$generic_code.'</code></div>';
+        $return .= '<input class="hidden" id="redactor-generic-'.$params['list']->getValue('id').'" value="' . $generic_code . '">';
         $return .= '<br><clipboard-copy for="redactor-yform-'.$params['list']->getValue('id').'" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>'.$yform_code.'</code></clipboard-copy>';
-        $return .= '<div class="hidden" id="redactor-yform-'.$params['list']->getValue('id').'"><code>'.$yform_code.'</code></div>';
+        $return .= '<input class="hidden" id="redactor-yform-'.$params['list']->getValue('id').'" value=\'' . $yform_code . '\'>';
 
         return $return;
 
