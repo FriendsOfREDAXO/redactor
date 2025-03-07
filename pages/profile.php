@@ -143,10 +143,10 @@ if ($func == 'add' || $func == 'edit') {
         $selector = substr($params['list']->getValue('selector'), 1);
         $generic_code = ''.$params['list']->getValue('selector').'';
         $return = '';
-        $return .= '<clipboard-copy for="redactor-generic-'.$params['list']->getValue('id').'" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>'.$generic_code.'</code></clipboard-copy>';
-        $return .= '<input class="hidden" id="redactor-generic-'.$params['list']->getValue('id').'" value="' . $generic_code . '">';
-        $return .= '<br><clipboard-copy for="redactor-yform-'.$params['list']->getValue('id').'" class="btn btn-copy btn-text"><i class="rex-icon fa-clone"></i> <code>'.$yform_code.'</code></clipboard-copy>';
-        $return .= '<input class="hidden" id="redactor-yform-'.$params['list']->getValue('id').'" value=\'' . $yform_code . '\'>';
+        $return .= '<clipboard-copy for="redactor-generic-'.$params['list']->getValue('id').'" class="btn btn-copy btn-default"><i class="rex-icon fa-clone"></i></clipboard-copy>';
+        $return .= ' <div id="redactor-generic-'.$params['list']->getValue('id').'" class="visible-lg-inline-block"><code>' . $generic_code . '</code></div>';
+        $return .= '<br><clipboard-copy for="redactor-yform-'.$params['list']->getValue('id').'" class="btn btn-copy btn-default"><i class="rex-icon fa-clone"></i></clipboard-copy>';
+        $return .= ' <div id="redactor-yform-'.$params['list']->getValue('id').'" class="visible-lg-inline-block"><code>' . $yform_code . '</code></div>';
 
         return $return;
 
