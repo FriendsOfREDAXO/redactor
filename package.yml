@@ -24,6 +24,10 @@ page:
     subpages:
         profile:
             title: 'translate:profiles'
+        settings:
+            title: 'translate:redactor_settings'
+            icon: rex-icon fa-cog
+            itemClass: 'pull-right'
         help:
             title: 'translate:help'
             icon: rex-icon fa-info-circle
@@ -199,3 +203,6 @@ editor:
         multipleUpload: true
         clipboardUpload: true
         uploadData: false
+
+default_config:
+    use_vanilla_js: ''

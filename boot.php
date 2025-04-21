@@ -15,6 +15,12 @@ $addon = rex_addon::get('redactor');
 
 if (rex::isBackend() && rex::getUser()) {
 
+    rex_extension::register('REDACTOR_PLUGIN_DIR', function (rex_extension_point $ep) {
+        if(rex_config::get('redactor', 'use_vanilla_js') == '|1|') {
+            $ep->setSubject([rex_addon::get('redactor')->getAssetsPath('plugins.vanilla')]); // Verzeichnis überschreiben
+        }
+    });
+
     rex_extension::register('PACKAGES_INCLUDED', function() use ($addon) {
 
         if ($this->getProperty('compile')) {
@@ -48,7 +54,11 @@ if (rex::isBackend() && rex::getUser()) {
         rex_view::addJsFile($addon->getAssetsUrl('vendor/redactor/langs/'.substr($userLang, 0, 2).'.js'));
         rex_view::addJsFile($addon->getAssetsUrl('cache/plugins.'.$userLang.'.js'));
         rex_view::addJsFile($addon->getAssetsUrl('cache/profiles.js'));
-        rex_view::addJsFile($addon->getAssetsUrl('redactor.js'));
+        if(rex_addon::get('redactor')->getConfig('use_vanilla_js') == '|1|') {
+            rex_view::addJsFile($addon->getAssetsUrl('redactor.vanilla.js'));
+        } else {
+            rex_view::addJsFile($addon->getAssetsUrl('redactor.js'));
+        }
 
         rex_view::setJsProperty('redactor_rex_clang_getCurrentId', rex_clang::getCurrentId());
         rex_view::setJsProperty('redactor_rex_url_media', '/media/');
