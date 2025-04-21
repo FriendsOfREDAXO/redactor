@@ -16,8 +16,8 @@ $addon = rex_addon::get('redactor');
 if (rex::isBackend() && rex::getUser()) {
 
     rex_extension::register('REDACTOR_PLUGIN_DIR', function (rex_extension_point $ep) {
-        if(rex_config::get('redactor', 'use_vanilla_js') == 1) {
-            $ep->setSubject([rex_path::addon('redactor', 'plugins.vanilla')]); // Verzeichnis überschreiben
+        if(rex_config::get('redactor', 'use_vanilla_js') == '|1|') {
+            $ep->setSubject([rex_addon::get('redactor')->getAssetsPath('plugins.vanilla')]); // Verzeichnis überschreiben
         }
     });
 
@@ -54,7 +54,7 @@ if (rex::isBackend() && rex::getUser()) {
         rex_view::addJsFile($addon->getAssetsUrl('vendor/redactor/langs/'.substr($userLang, 0, 2).'.js'));
         rex_view::addJsFile($addon->getAssetsUrl('cache/plugins.'.$userLang.'.js'));
         rex_view::addJsFile($addon->getAssetsUrl('cache/profiles.js'));
-        if(rex_addon::get('redactor')->getConfig('use_vanilla_js') == 1) {
+        if(rex_addon::get('redactor')->getConfig('use_vanilla_js') == '|1|') {
             rex_view::addJsFile($addon->getAssetsUrl('redactor.vanilla.js'));
         } else {
             rex_view::addJsFile($addon->getAssetsUrl('redactor.js'));
