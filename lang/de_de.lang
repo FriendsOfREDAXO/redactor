@@ -2,7 +2,8 @@ redactor_title = Redactor
 
 redactor_error_save_profile = Profile konnten nicht erstellt werden.
 
-redactor_help = Dokumentation
+redactor_help = Docs
+redactor_settings = Einstellungen
 
 redactor_clear_cache = Cache löschen
 redactor_cache_deleted = Cache wurde gelöscht
@@ -174,3 +175,5 @@ redactor_plugin_vendor_video_html_code = Video-Einbettungscode oder Youtube/Vime
 # Widget
 redactor_plugin_vendor_widget = Widget
 redactor_plugin_vendor_widget_html_code = Widget HTML Code
+
+redactor_settings_use_vanilla_js = Modernes JavaScript verwenden anstelle von jQuery.
