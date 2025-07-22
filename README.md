@@ -1,76 +1,14 @@
 # Redactor Editor
 
-Bindet den WYSIWYG-Editor [Redactor](http://imperavi.com/redactor/) in Version 3 im Backend ein.
+Bindet den WYSIWYG-Editor [Redactor](http://imperavi.com/redactor/) im Backend ein.
+
+> "Ultra-modern, ✨ AI-powered editor with powerful API capabilities, a wide range of settings, good documentation and tons of integration examples."
 
 ![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/redactor/assets/redactor.png)
 
 ## Funktionen
 
-- alignment
-- blockquote
-- bold
-- cleaner
-- clip
-- deleted
-- format; format[p|h1]; format[Sher=p.sher|Lock=p.lock]
-- h1
-- h2
-- h3
-- h4
-- h5
-- h6
-- hr
-- html
-- image
-- indent
-- italic
-- linkEmail
-- linkExternal
-- linkInternal
-- linkMedia
-- linkTelephone
-- linkYForm[tableNameA=field|rex_yf_news=title]
-- lists[ul|ol|indent|outdent]
-- ol
-- outdent
-- pre 
-- quote
-- redo
-- separator (|)
-- style[code|mark|var|kbd|sup|sub]
-- sub
-- sup
-- ul
-- underline
-- undo
-
-## Redactor Plugins
-
-- counter (via Profil aktivieren)
-- fontcolor
-- fontfamily
-- fontsize
-- fullscreen
-- limiter (via Profil aktivieren)
-- properties
-- specialchars
-- table
-- textdirection
-- video
-- widget
-
-
-## Profil 
-
-Ein Profil wird entsprechend wie folgt angelegt: 
-
-```
-html,|,undo,redo,|,h1,h2,h3,h4,bold,italic,|,image,blockquote,lists[indent],ol,ul,linkExternal,linkInternal,hr,linkYForm[rex_yform_test=last_name|rex_yform_news=title],table,widget
-```
-
-Weitere Einstellungen können hinterlegt werden, dazu die Parameter des Vendors beachten: <https://imperavi.com/redactor/docs/settings/overview/>
-
-## Modulbeispiel
+In Arbeit
 
 ### Eingabe
 Der in der Profilverwaltung erstellte Selector wird der Textarea als css-class zugeordnet. 
@@ -125,23 +63,11 @@ Dazu müsste der Code für die Urls angepasst werden.
 }, rex_extension::NORMAL);
 ```
 
-### Migration von `redactor2` zu `redactor` (3, diese Version)
-
-https://github.com/FriendsOfREDAXO/redactor/issues/11
-
-
 ## Lizenz
 
-REDAXO OEM License, siehe [LICENSE.md](https://github.com/alexplusde/neues/blob/master/LICENSE)  
-
-## Autor
-
-**Friends of REDAXO**
 
 ## Credits
 
 **Projekt-Leads**  
-[Thomas Blum](https://github.com/tbaddade)
 [Alexander Walther](https://github.com/alxndr-w)
-
-[Und weitere Beteiligte](https://github.com/FriendsOfREDAXO/redactor/graphs/contributors)
+WIP
