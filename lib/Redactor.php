@@ -109,7 +109,7 @@ class Redactor
             }
 
             // Parse user-supplied settings. This is a bit hacky but "works for now"
-            if ('' !== trim($profile['settings'])) {
+            if ('' !== trim($profile['settings'] ?? '')) {
                 $settings = explode("\n", $profile['settings']);
                 foreach ($settings as $setting) {
                     $matches = null;
