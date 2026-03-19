@@ -64,10 +64,6 @@ Dazu müsste der Code für die Urls angepasst werden.
 ```
 
 ## Lizenz
+[Lizenz](https://github.com/FriendsOfREDAXO/redactor/blob/main/LICENSE)
 
 
-## Credits
-
-**Projekt-Leads**  
-[Alexander Walther](https://github.com/alxndr-w)
-WIP
